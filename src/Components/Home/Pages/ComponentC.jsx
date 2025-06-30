@@ -66,14 +66,11 @@ const ComponentC = () => {
                     <Box
                         sx={{
                             position: 'relative',
-                            borderRadius: theme.shape.borderRadius,
                             overflow: 'hidden',
-                            boxShadow: theme.shadows[4],
                             height: { xs: '200px', sm: '280px', md: '350px' },
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            // mb: { xs: 3, md: 0 } // Bootstrap's g-3 adds margin, so this might not be needed. Adjust if visual gap is too small.
                         }}
                     >
                         <Box
@@ -82,7 +79,6 @@ const ComponentC = () => {
                                 height: '100%',
                                 width: '100%',
                                 objectFit: 'cover',
-                                borderRadius: theme.shape.borderRadius,
                                 transition: 'opacity 0.5s ease-in-out',
                                 opacity: 1,
                             }}
