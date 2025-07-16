@@ -1,0 +1,133 @@
+[
+  {
+    "label": "",
+    "path": "/",
+    "component": "Home",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"#fff\" class=\"bi bi-house-fill\" viewBox=\"0 0 16 16\"><path d=\"M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z\"/><path d=\"m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z\"/></svg>"
+  },
+  {
+    "label": "About us",
+    "path": "/about-us",
+    "component": "AboutUs",
+    "children": [
+      { "label": "Organizational Setup", "path": "/about-us/organizational-setup", "component": "OrganizationalSetup" },
+      { "label": "Agroclimatic Zones", "path": "/about-us/agroclimatic-zones", "component": "AgroclimaticZones" },
+      { "label": "How to Reach Us", "path": "/about-us/how-to-reach-us", "component": "HowToReachUs" }
+    ]
+  },
+  {
+    "label": "Staff",
+    "path": "/staff",
+    "component": "Staff",
+    "children": [
+      { "label": "Director", "path": "/staff/director", "component": "Director" },
+      {
+        "label": "Scientist",
+        "path": "#",
+        "children": [
+          { "label": "Principal Scientist", "path": "/staff/scientist/principal", "component": "PrincipalScientist" },
+          { "label": "Senior Scientist", "path": "/staff/scientist/senior", "component": "SeniorScientist" },
+          { "label": "Scientist", "path": "/staff/scientist/basic", "component": "BasicScientist" }
+        ]
+      },
+      {
+        "label": "Administrative",
+        "path": "#",
+        "children": [
+          { "label": "AF & AO", "path": "/staff/administrative/af-ao", "component": "AfAndAo" },
+          { "label": "AAO", "path": "/staff/administrative/aao", "component": "Aao" },
+          { "label": "Assistant", "path": "/staff/administrative/assistant", "component": "Assistant" }
+        ]
+      },
+      {
+        "label": "Contractual Staff",
+        "path": "#",
+        "children": [
+          { "label": "SRF", "path": "/staff/contractual/srf", "component": "Srf" },
+          { "label": "YPs", "path": "/staff/contractual/yps", "component": "Yps" }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "KVKs",
+    "path": "/kvks",
+    "component": "Kvks",
+    "children": [
+      { "label": "About KVKs", "path": "/kvks/about", "component": "AboutKvks" },
+      {
+        "label": "Senior Scientist & Head",
+        "path": "#",
+        "children": [
+          { "label": "Maharashtra", "path": "/kvks/senior-scientist-head/maharashtra", "component": "MaharashtraKvk" },
+          { "label": "Gujarat", "path": "/kvks/senior-scientist-head/gujarat", "component": "GujaratKvk" },
+          { "label": "Goa", "path": "/kvks/senior-scientist-head/goa", "component": "GoaKvk" }
+        ]
+      },
+      { "label": "ATICs", "path": "/kvks/atics", "component": "Atics" },
+      {
+        "label": "SAC Meeting",
+        "path": "#",
+        "children": [
+          { "label": "2019-20", "path": "/kvks/sac-meeting/2019-20", "component": "SacMeeting2019" },
+          { "label": "2020-21", "path": "/kvks/sac-meeting/2020-21", "component": "SacMeeting2020" },
+          { "label": "2021-22", "path": "/kvks/sac-meeting/2021-22", "component": "SacMeeting2021" }
+        ]
+      },
+      { "label": "Reporting Format", "path": "/kvks/reporting-format", "component": "ReportingFormat" },
+      {
+        "label": "KVKs of ATARI",
+        "path": "#",
+        "children": [
+          { "label": "Maharashtra", "path": "/kvks/kvks-of-atari/maharashtra", "component": "AtariMaharashtraKvk" },
+          { "label": "Gujarat", "path": "/kvks/kvks-of-atari/gujarat", "component": "AtariGujaratKvk" },
+          { "label": "Goa", "path": "/kvks/kvks-of-atari/goa", "component": "AtariGoaKvk" }
+        ]
+      },
+      { "label": "Land Holding Area", "path": "/kvks/land-holding-area", "component": "LandHoldingArea" }
+    ]
+  },
+  {
+    "label": "Projects",
+    "path": "/projects",
+    "component": "Projects",
+    "children": [
+      { "label": "Internally Funded", "path": "/projects/internally-funded", "component": "InternallyFunded" },
+      { "label": "Externally Funded", "path": "/projects/externally-funded", "component": "ExternallyFunded" },
+      { "label": "Special Programmes", "path": "/projects/special-programmes", "component": "SpecialProgrammes" }
+    ]
+  },
+  { "label": "RTI", "path": "/rti", "component": "Rti" },
+  {
+    "label": "Gallery",
+    "path": "/gallery",
+    "component": "Gallery",
+    "children": [
+      { "label": "Photo Gallery", "path": "/gallery/photo-gallery", "component": "PhotoGallery" }
+    ]
+  },
+  {
+    "label": "Publications",
+    "path": "/publications",
+    "component": "Publications",
+    "children": [
+      { "label": "Research Papers / Review / Books", "path": "/publications/research-papers-books", "component": "ResearchPapersBooks" },
+      { "label": "Technical Bulletins", "path": "/publications/technical-bulletins", "component": "TechnicalBulletins" },
+      { "label": "ATARI News Letters", "path": "/publications/atari-news-letters", "component": "AtariNewsLetters" }
+    ]
+  },
+  {
+    "label": "Reports",
+    "path": "/reports",
+    "component": "Reports",
+    "children": [
+      { "label": "MPR", "path": "/reports/mpr", "component": "Mpr" },
+      { "label": "QPR", "path": "/reports/qpr", "component": "Qpr" },
+      { "label": "APR", "path": "/reports/apr", "component": "Apr" },
+      { "label": "Proceedings", "path": "/reports/proceedings", "component": "Proceedings" }
+    ]
+  },
+  { "label": "Mobile Apps", "path": "/mobile-apps", "component": "MobileApps" },
+  { "label": "ATARI KVKs in ICAR-News", "path": "/atari-kvks-in-icar-news", "component": "AtariKvksInIcarNews" },
+  { "label": "Online Payment", "path": "/online-payment", "component": "OnlinePayment" }
+]

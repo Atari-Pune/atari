@@ -3,52 +3,70 @@ import { Box, IconButton, Typography } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-// Mock JSON data for slider images. In a real application, this would be fetched.
+// Mock JSON data for slider images.
+// IMPORTANT: Ensure 'dimensions' are accurately provided as "WIDTHxHEIGHT" strings.
+// Get the base URL from environment variables
+// Add a fallback in case the env variable is not set
+const WEBSITE_BASE_URL = process.env.REACT_APP_WEBSITE_URL;
 const imageData = [
     {
-        id: 1,
-        src: "https://placehold.co/1200x400/198754/ffffff?text=Landscape+1",
-        alt: "Beautiful Landscape",
-        title: "Serene Green Hills",
-        fileType: "png",
+        id: 5,
+        // Construct the src path using the base URL and the relative path to the image
+        src: `${WEBSITE_BASE_URL}/images/NICRA Workshop at Goa.jpeg`,
+        alt: "ICAR-ATARI Institute Building",
+        title: "ICAR-ATARI Institute Building",
+        fileType: "jpeg", // Corrected fileType to match actual extension
         dimensions: "1200x400",
-        description: "A peaceful view of rolling green hills under a clear sky."
+        description: ""
     },
     {
         id: 2,
-        src: "https://placehold.co/1200x400/0d6efd/ffffff?text=Cityscape+2",
-        alt: "Urban Cityscape",
-        title: "Vibrant City at Dusk",
-        fileType: "png",
+        src: `${WEBSITE_BASE_URL}/images/DSC_8096.JPG`,
+        alt: "NICRA Workshop at Goa", // Alt text for image 5 is more appropriate here
+        title: "NICRA Workshop at Goa", // Title for image 5 is more appropriate here
+        fileType: "jpg", // Corrected fileType
         dimensions: "1200x400",
-        description: "The bustling city lights come alive as the sun sets."
+        description: ""
     },
     {
         id: 3,
-        src: "https://placehold.co/1200x400/6f42c1/ffffff?text=Nature+3",
-        alt: "Nature Scene",
-        title: "Tranquil Forest Stream",
-        fileType: "png",
+        src: `${WEBSITE_BASE_URL}/images/DSC_9794.JPG`,
+        alt: "Agricultural Field Research",
+        title: "Agricultural Field Research", // Added title for consistency
+        fileType: "jpg", // Corrected fileType
         dimensions: "1200x400",
-        description: "A calm stream flowing through a dense, green forest."
+        description: ""
+    },
+    {
+        id: 1,
+        src: `${WEBSITE_BASE_URL}/images/6th%20Zonal%20workshop-1.JPG`,
+        alt: "6th Zonal Workshop Image",
+        title: "6th Zonal Workshop: Advancing Agricultural Research",
+        fileType: "jpg",
+        dimensions: "1200x400",
+        description: ""
     },
     {
         id: 4,
-        src: "https://placehold.co/1200x400/dc3545/ffffff?text=Mountains+4",
-        alt: "Mountain View",
-        title: "Majestic Mountain Peaks",
-        fileType: "png",
+        src: `${WEBSITE_BASE_URL}/images/DSC_9940.JPG`,
+        alt: "Farmer with Harvest",
+        title: "Farmer with Harvest", // Added title for consistency
+        fileType: "jpg", // Corrected fileType
         dimensions: "1200x400",
-        description: "Snow-capped mountains piercing through the clouds."
-    }
+        description: ""
+    },
 ];
 
+
 /**
- * A dynamic image slider component using Material-UI and Bootstrap principles.
- * Fetches image data from a JSON structure and displays it with navigation controls.
+ * A responsive image slider component for displaying a series of images.
+ * - Adapts its height dynamically to the aspect ratio of the current image.
+ * - Images always cover the full width and height of the slider (`objectFit: 'cover'`).
+ * - Includes responsive text overlays, navigation controls, and auto-play.
  */
 const ImageSlider = () => {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [aspectRatioPadding, setAspectRatioPadding] = useState(null); // State for dynamic padding-bottom
 
     // Handles moving to the next slide
     const goToNextSlide = () => {
@@ -69,125 +87,221 @@ const ImageSlider = () => {
         setCurrentSlideIndex(index);
     };
 
-    // Optional: Auto-play functionality
+    // Calculate aspect ratio padding for the current image dynamically
     useEffect(() => {
-        // Check if there's more than one image to slide
+        if (imageData.length > 0) {
+            const currentImage = imageData[currentSlideIndex];
+            if (currentImage && currentImage.dimensions) {
+                const [width, height] = currentImage.dimensions.split('x').map(Number);
+                if (width > 0 && height > 0) { // Ensure dimensions are valid numbers and not zero
+                    // Calculate (height / width) * 100 for padding-bottom
+                    setAspectRatioPadding(((height / width) * 100).toFixed(2));
+                } else {
+                    // Fallback if dimensions are invalid or missing
+                    console.warn(`Invalid dimensions for image ID ${currentImage.id}: ${currentImage.dimensions}. Defaulting to 16:9 aspect ratio.`);
+                    setAspectRatioPadding(56.25); // Default to 16:9 aspect ratio
+                }
+            } else {
+                console.warn(`No dimensions provided for image ID ${currentImage.id}. Defaulting to 16:9 aspect ratio.`);
+                setAspectRatioPadding(56.25); // Default to 16:9 if no dimensions or image data
+            }
+        } else {
+            setAspectRatioPadding(56.25); // Default to 16:9 if no images at all
+        }
+        // eslint-disable-next-line
+    }, [currentSlideIndex, imageData]); // Recalculate if slide changes or image data changes
+
+    // Auto-play functionality
+    useEffect(() => {
         if (imageData.length > 1) {
             const interval = setInterval(goToNextSlide, 5000); // Change slide every 5 seconds
             return () => clearInterval(interval); // Clear interval on component unmount
         }
+        // eslint-disable-next-line
     }, [currentSlideIndex, imageData.length]); // Re-run if currentSlideIndex or image data changes
 
     return (
         <Box
-            // Removed className="container-fluid" to eliminate Bootstrap's default horizontal padding
             sx={{
                 position: 'relative',
-                width: '100%', // Ensure it takes full width of its parent
-                margin: '0 auto', // Center it if its parent is wider than 100%
-                overflow: 'hidden', // Crucial for hiding overflowing slides
-                borderRadius: '8px', // Rounded corners for the slider container
-                backgroundColor: '#f8f9fa', // Light background
-                px: 0, // Explicitly set horizontal padding to 0
-                py: { xs: 1, m: 2 }, // Keep vertical padding as previously defined
-                // Fixed height for the slider viewport to ensure consistent sizing
-                height: { xs: '250px', sm: '300px', md: '400px', lg: '500px' },
-                display: 'flex', // Use flex to center content vertically if needed
-                alignItems: 'center', // Center content vertically
+                width: '100%', // Takes full width of its parent container
+                margin: '0 auto', // Center the slider horizontally
+                overflow: 'hidden', // Hides overflowing content (e.g., other slides)
+                borderRadius: '8px', // Rounded corners for the slider viewport
+                backgroundColor: '#f8f9fa', // Light background visible if images aren't loaded or padding is off
+                
+                // --- Dynamic Height using Aspect Ratio Trick ---
+                // Set height to 0 and use padding-bottom as a percentage of the width.
+                // This makes the Box's height dynamic, matching the aspect ratio of the current image.
+                paddingBottom: aspectRatioPadding ? `${aspectRatioPadding}%` : '56.25%',
+                height: 0,
+                boxSizing: 'content-box', // Ensures padding is *added* to the content area, crucial for this trick
             }}
         >
+            {/* Inner Box to hold all slides in a row */}
             <Box
-                className="d-flex" // Bootstrap flexbox
                 sx={{
-                    transition: 'transform 0.5s ease-in-out',
-                    // The transform now correctly moves by the width of one slide (100% of its parent's width)
-                    transform: `translateX(-${currentSlideIndex * 100}%)`,
-                    width: `${imageData.length * 100}%`, // Ensure all slides fit in one row
-                    height: '100%', // Take full height of the parent slider box
+                    position: 'absolute', // Position absolute to fill the aspect-ratio-driven parent
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex', // Use flexbox to arrange slides horizontally
+                    transition: 'transform 0.5s ease-in-out', // Smooth slide transition
+                    transform: `translateX(-${currentSlideIndex * 100}%)`, // Moves the slide container
                 }}
             >
                 {imageData.map((image, index) => (
                     <Box
                         key={image.id}
-                        className="d-flex flex-column align-items-center justify-content-center text-white" // Bootstrap classes for centering and text color
                         sx={{
-                            flex: '0 0 100%', // Each slide takes exactly 100% of the flex container's width, and does not shrink or grow
-                            height: '100%', // Each slide box takes full height
-                            position: 'relative',
-                            textAlign: 'center',
-                            backgroundColor: '#198754', // Bootstrap success color
-                            borderRadius: '8px', // Rounded corners for individual slides
-                            overflow: 'hidden',
-                            p: 3, // Padding inside each slide
+                            flex: '0 0 100%', // Each slide takes exactly 100% of the visible width
+                            height: '100%', // Each slide box takes the full height of the slider
+                            position: 'relative', // For absolute positioning of the image and text overlay
+                            overflow: 'hidden', // Crucial for objectFit: 'cover' to crop images cleanly
+                            display: 'flex', // Flexbox to center image vertically/horizontally
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: '#198754', // Fallback background for slide
                         }}
                     >
+                        {/* The Image Element */}
                         <Box
                             component="img"
                             src={image.src}
                             alt={image.alt}
-                            className="img-fluid rounded" // Bootstrap for responsive image and rounded corners
                             sx={{
-                                maxWidth: '100%',
-                                height: '100%', // Image takes full height of its container
-                                objectFit: 'cover', // Ensures image covers the area without distortion, cropping if necessary
-                                display: 'block', // Ensure image takes its own line
-                                mb: 2, // Margin bottom for spacing
+                                width: '100%', // Image takes full width of its parent slide box
+                                height: '100%', // Image takes full height of its parent slide box
+                                objectFit: 'cover', // Scales and crops the image to fill the entire area, maintaining aspect ratio
+                                display: 'block', // Ensures no extra space below the image
+                                borderRadius: '8px', // Apply border radius directly to the image itself
                             }}
                             // Fallback for image loading errors
                             onError={(e) => {
-                                e.target.onerror = null; // Prevent infinite loop
-                                e.target.src = `https://placehold.co/${image.dimensions.split('x')[0]}x${image.dimensions.split('x')[1]}/6c757d/ffffff?text=Image+Load+Error`; // Bootstrap secondary color fallback
+                                e.target.onerror = null; // Prevent infinite loop on error
+                                const [w, h] = image.dimensions ? image.dimensions.split('x').map(Number) : [1200, 400];
+                                e.target.src = `https://placehold.co/${w}x${h}/6c757d/ffffff?text=Image+Load+Error`; // Placeholder with original dimensions
+                                console.error(`Failed to load image: ${image.src}`);
                             }}
                         />
-                        <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold', mb: 1, position: 'absolute', bottom: '60px', width: '90%', left: '50%', transform: 'translateX(-50%)' }}>
-                            {image.title}
-                        </Typography>
-                        <Typography variant="body2" sx={{ mb: 1, position: 'absolute', bottom: '30px', width: '90%', left: '50%', transform: 'translateX(-50%)' }}>
-                            {image.description}
-                        </Typography>
-                        <Typography variant="caption" sx={{ opacity: 0.8, position: 'absolute', bottom: '10px', width: '90%', left: '50%', transform: 'translateX(-50%)' }}>
-                            {`Type: ${image.fileType} | Dimensions: ${image.dimensions}`}
-                        </Typography>
+
+                        {/* Text Overlay for Title, Description, and Metadata */}
+                        <Box
+                            sx={{
+                                position: 'absolute',
+                                bottom: 0, // Position at the very bottom
+                                left: 0,
+                                right: 0,
+                                // Gradient background for better readability over varied image content
+                                background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.0) 100%)',
+                                p: { xs: 1, sm: 2, md: 3 }, // Responsive padding inside the overlay
+                                color: 'white',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start', // Align text to the left
+                                justifyContent: 'flex-end', // Push content to the bottom
+                                textAlign: 'left', // Ensure text itself is left-aligned
+                                zIndex: 1, // Ensure text is above the image
+                                // Responsive fixed height for the overlay to prevent overlap and ensure space for dots
+                                height: { xs: '80px', sm: '100px', md: '120px' },
+                                overflow: 'hidden', // Hide any text that overflows the overlay box
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                component="h3"
+                                sx={{
+                                    fontWeight: 'bold',
+                                    fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.25rem' },
+                                    lineHeight: 1.2,
+                                    mb: 0.5,
+                                    textShadow: '1px 1px 2px rgba(0,0,0,0.7)', // Text shadow for better contrast
+                                    // Truncate title to 1 line if it overflows
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: 1,
+                                    WebkitBoxOrient: 'vertical',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                }}
+                            >
+                                {image.title || 'Untitled Image'} {/* Fallback title */}
+                            </Typography>
+                            {image.description && ( // Only render description if it exists
+                                <Typography
+                                    variant="body2"
+                                    sx={{
+                                        fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                                        lineHeight: 1.3,
+                                        opacity: 0.9,
+                                        textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
+                                        // Truncate description to 2 lines if it overflows
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 2,
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                    }}
+                                >
+                                    {image.description}
+                                </Typography>
+                            )}
+                            <Typography
+                                variant="caption"
+                                sx={{
+                                    fontSize: { xs: '0.65rem', sm: '0.75rem' },
+                                    opacity: 0.7,
+                                    mt: 0.5, // Margin top to separate from description
+                                    textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
+                                    // Truncate caption to 1 line if it overflows
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: 1,
+                                    WebkitBoxOrient: 'vertical',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                }}
+                            >
+                                {`Type: ${image.fileType} | Dimensions: ${image.dimensions}`}
+                            </Typography>
+                        </Box>
                     </Box>
                 ))}
             </Box>
 
-            {/* Navigation Arrows */}
-            {imageData.length > 1 && ( // Only show arrows if there's more than one image
+            {/* Navigation Arrows (visible only if more than one image) */}
+            {imageData.length > 1 && (
                 <>
                     <IconButton
                         onClick={goToPreviousSlide}
+                        aria-label="Previous slide"
                         sx={{
                             position: 'absolute',
-                            top: '50%',
-                            left: { xs: 5, md: 10 },
+                            top: '50%', // Center vertically
+                            left: { xs: 5, md: 10 }, // Spacing from left edge
                             transform: 'translateY(-50%)',
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
                             color: 'white',
-                            '&:hover': {
-                                backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                            },
-                            zIndex: 1,
-                            borderRadius: '50%', // Circular button
-                            p: { xs: 1, md: 1.5 },
+                            '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.7)' },
+                            zIndex: 2, // Ensure arrows are above text overlay and image
+                            borderRadius: '50%', // Circular button shape
+                            p: { xs: 1, md: 1.5 }, // Padding for button size
                         }}
                     >
                         <ArrowBackIosNewIcon fontSize="small" />
                     </IconButton>
                     <IconButton
                         onClick={goToNextSlide}
+                        aria-label="Next slide"
                         sx={{
                             position: 'absolute',
-                            top: '50%',
-                            right: { xs: 5, md: 10 },
+                            top: '50%', // Center vertically
+                            right: { xs: 5, md: 10 }, // Spacing from right edge
                             transform: 'translateY(-50%)',
                             backgroundColor: 'rgba(0, 0, 0, 0.5)',
                             color: 'white',
-                            '&:hover': {
-                                backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                            },
-                            zIndex: 1,
-                            borderRadius: '50%', // Circular button
+                            '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.7)' },
+                            zIndex: 2,
+                            borderRadius: '50%',
                             p: { xs: 1, md: 1.5 },
                         }}
                     >
@@ -196,16 +310,17 @@ const ImageSlider = () => {
                 </>
             )}
 
-            {/* Navigation Dots */}
-            {imageData.length > 1 && ( // Only show dots if there's more than one image
+            {/* Navigation Dots (visible only if more than one image) */}
+            {imageData.length > 1 && (
                 <Box
-                    className="d-flex justify-content-center" // Bootstrap flexbox for centering
                     sx={{
                         position: 'absolute',
-                        bottom: { xs: 5, md: 10 },
-                        left: '50%',
+                        bottom: { xs: 5, md: 10 }, // Position above the text overlay or near its bottom
+                        left: '50%', // Center horizontally
                         transform: 'translateX(-50%)',
-                        zIndex: 1,
+                        zIndex: 3, // Ensure dots are on top of everything
+                        display: 'flex', // Arrange dots in a row
+                        justifyContent: 'center',
                     }}
                 >
                     {imageData.map((_, index) => (
@@ -213,16 +328,14 @@ const ImageSlider = () => {
                             key={index}
                             onClick={() => goToSlide(index)}
                             sx={{
-                                width: { xs: 8, md: 12 },
+                                width: { xs: 8, md: 12 }, // Responsive dot size
                                 height: { xs: 8, md: 12 },
-                                borderRadius: '50%',
+                                borderRadius: '50%', // Circular shape
                                 backgroundColor: index === currentSlideIndex ? 'white' : 'rgba(255, 255, 255, 0.5)',
-                                margin: { xs: '0 4px', md: '0 6px' },
+                                margin: { xs: '0 4px', md: '0 6px' }, // Spacing between dots
                                 cursor: 'pointer',
-                                transition: 'background-color 0.3s',
-                                '&:hover': {
-                                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                                },
+                                transition: 'background-color 0.3s', // Smooth color change on hover/active
+                                '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.8)' },
                             }}
                         />
                     ))}

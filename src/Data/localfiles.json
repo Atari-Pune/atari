@@ -1,0 +1,27 @@
+[
+    {
+        "label": "Portal",
+        "path": "/portal",
+        "component": "PortalPage"
+    },
+    {
+        "label": "Important Links",
+        "path": "/important-links",
+        "component": "ImportantLinksPage"
+    },
+    {
+        "label": "Release / Order / Circulars",
+        "path": "/release-order-circulars",
+        "component": "ReleaseOrderCircularsPage"
+    },
+    {
+        "label": "Programmes",
+        "path": "/programmes",
+        "component": "ProgrammesPage"
+    },
+    {
+        "label": "Vigilance Officer",
+        "path": "/vigilance-officer",
+        "component": "VigilanceOfficerPage"
+    }
+]

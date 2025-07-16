@@ -2,18 +2,20 @@ import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
 
 const ComponentB = () => {
+    // Access the environment variable
+  const baseUrl = process.env.REACT_APP_WEBSITE_URL;
   const headingColor = '#212529'; // Dark text for headings (Bootstrap default)
-  const linkColor = '#007bff';    // Bootstrap primary color for links
+  const linkColor = '#007bff';     // Bootstrap primary color for links
 
   const quickLinks = [
-    { label: 'Portal', href: '#' },
-    { label: 'Important Links', href: '#' },
-    { label: 'Release / Order / Circulars', href: '#' },
-    { label: 'Programmes', href: '#' },
-    { label: 'Publication', href: '#' },
-    { label: 'Success Stories', href: '#' },
-    { label: 'Vigilance Officer', href: '#' },
-    { label: 'Proceedings', href: '#' },
+    { label: 'Portal', href:'/atari/portal' },
+    { label: 'Important Links', href: '/atari/important-links' },
+    { label: 'Release / Order / Circulars', href: '/atari/release-order-circulars' },
+    { label: 'Programmes', href: '/atari/programmes' },
+    { label: 'Publication', href: '/atari/publications/research-papers-books' },
+    { label: 'Success Stories', href: `${baseUrl}pdf/Success-Stories.pdf` },
+    { label: 'Vigilance Officer', href: '/atari/vigilance-officer' },
+    { label: 'Proceedings', href: '/atari/reports/proceedings' },
   ];
 
   return (
@@ -37,31 +39,41 @@ const ComponentB = () => {
       >
         Quick Links
       </Typography>
+      {
+        console.log(process.env.REACT_APP_WEBSITE_URL)
+      }
 
       <Box className="ongoing-links" sx={{ width: '100%' }}>
         <Box className="textwidget" sx={{ width: '100%' }}>
           <List sx={{ p: 0 }}>
-            {quickLinks.map((link, index) => (
-              <ListItem key={index} disablePadding sx={{ mb: 1 }}>
-                <ListItemText>
-                  <Typography
-                    component="a"
-                    href={link.href}
-                    sx={{
-                      textDecoration: 'none',
-                      color: linkColor,
-                      fontSize: { xs: '0.9rem', sm: '1rem' },
-                      '&:hover': {
-                        textDecoration: 'underline',
-                        color: '#0056b3',
-                      },
-                    }}
-                  >
-                    {link.label}
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-            ))}
+            {quickLinks.map((link, index) => {
+                // Check if the link is a PDF file
+                const isPdf = link.href.endsWith('.pdf');
+
+                return (
+                  <ListItem key={index} disablePadding sx={{ mb: 1 }}>
+                    <ListItemText>
+                      <Typography
+                        component="a"
+                        href={link.href}
+                        // Conditionally apply target="_blank" and rel="noopener noreferrer"
+                        {...(isPdf ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        sx={{
+                          textDecoration: 'none',
+                          color: linkColor,
+                          fontSize: { xs: '0.9rem', sm: '1rem' },
+                          '&:hover': {
+                            textDecoration: 'underline',
+                            color: '#0056b3',
+                          },
+                        }}
+                      >
+                        {link.label}
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
+                );
+            })}
           </List>
         </Box>
       </Box>

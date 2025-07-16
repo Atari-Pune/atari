@@ -14,12 +14,17 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
+
+// Get the base URL from environment variables
+// Add a fallback in case the env variable is not set
+const WEBSITE_BASE_URL = process.env.REACT_APP_WEBSITE_URL;
+
 // Dummy image data
 const images = [
-    { label: 'Random Image 1', imgPath: 'https://picsum.photos/id/237/800/450' },
-    { label: 'Random Image 2', imgPath: 'https://picsum.photos/id/238/800/450' },
-    { label: 'Random Image 3', imgPath: 'https://picsum.photos/id/239/800/450' },
-    { label: 'Random Image 4', imgPath: 'https://picsum.photos/id/240/800/450' },
+    { label: 'NICRA Workshop at Goa', imgPath: `${WEBSITE_BASE_URL}/images/NICRA Workshop at Goa.jpeg` },
+    { label: 'ICAR-ATARI Institute Building', imgPath: `${WEBSITE_BASE_URL}/images/DSC_8096.JPG` },
+    { label: 'Agricultural Field Research', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9794.JPG` },
+    { label: 'Farmer with Harvest', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9940.JPG` },
 ];
 
 const ComponentC = () => {
@@ -66,11 +71,14 @@ const ComponentC = () => {
                     <Box
                         sx={{
                             position: 'relative',
+                            borderRadius: theme.shape.borderRadius,
                             overflow: 'hidden',
+                            boxShadow: theme.shadows[4],
                             height: { xs: '200px', sm: '280px', md: '350px' },
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
+                            // mb: { xs: 3, md: 0 } // Bootstrap's g-3 adds margin, so this might not be needed. Adjust if visual gap is too small.
                         }}
                     >
                         <Box
@@ -79,6 +87,7 @@ const ComponentC = () => {
                                 height: '100%',
                                 width: '100%',
                                 objectFit: 'cover',
+                                borderRadius: theme.shape.borderRadius,
                                 transition: 'opacity 0.5s ease-in-out',
                                 opacity: 1,
                             }}

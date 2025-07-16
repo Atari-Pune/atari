@@ -1,33 +1,34 @@
 import React, { useRef } from 'react';
 import { Box, Typography, SvgIcon } from '@mui/material';
-const Notification = () => {
-  // Ref for the marquee element to control its playback
-  const marqueeRef = useRef(null);
 
+const Notification = () => {
+  const marqueeRef = useRef(null);
   const headingTextColor = '#198754'; // Bootstrap success color for heading
   const alertBgColor = '#fff3cd'; // Bootstrap warning background color
   const alertTextColor = '#664d03'; // Darker text color for contrast on warning background
 
-  // Data for the event alerts, can be fetched dynamically in a real application
+  // Data for the event alerts
   const eventAlerts = [
     {
       id: 1,
       link: "https://ataripune.icar.gov.in/PDF/Deputation.pdf",
-      text: "Filling up of Administrative Posts on Deputation or transfer on Permanent Absorption Basis at ICAR_ATARI,Pune"
+      text: "Filling up of Administrative Posts on Deputation or transfer on Permanent Absorption Basis at ICAR_ATARI, Pune"
     },
     {
       id: 2,
       link: "https://ataripune.icar.gov.in/PDF/Deputation.pdf",
-      text: "Permanent Absorption Basis at ICAR_ATARI,Pune"
+      text: "Permanent Absorption Basis at ICAR_ATARI, Pune"
     },
     {
       id: 3,
       link: "https://ataripune.icar.gov.in/PDF/Deputation.pdf",
-      text: "Advertisement for various administrative posts at ICAR_ATARI,Pune"
+      text: "Advertisement for various administrative posts at ICAR_ATARI, Pune"
     }
   ];
 
-  // SVG icon for the PDF file
+  // Duplicate the event alerts to create a seamless loop
+  const endlessEventAlerts = [...eventAlerts, ...eventAlerts];
+
   const PdfIcon = (props) => (
     <SvgIcon {...props}>
       <path d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.148 21.148 0 0 0 .5-1.05 12.045 12.045 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.881 3.881 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 6.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z" />
@@ -36,51 +37,51 @@ const Notification = () => {
   );
 
   return (
-    <Box component="section">
-      <Box className="container-fluid" sx={{ maxWidth: '100%', mt: 0.5, mb: 0, display: 'flex', alignItems: 'center' }}>
-        <Box className="heading" sx={{ mr: 2, flexShrink: 0 }}> {/* Added flexShrink to prevent heading from shrinking */}
-          <Typography variant="h5" component="h1" sx={{ fontSize: '1.25rem', fontWeight: 500, color: headingTextColor, mt:-2 }}>
+    <Box component="section" sx={{ p: 1 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+        <Box sx={{ flexShrink: 0, mr: 2 }}>
+          <Typography variant="h5" component="h1" sx={{ fontSize: '1.25rem', fontWeight: 700, color: headingTextColor }}>
             Upcoming Events
           </Typography>
         </Box>
         <Box
-          className="events flex-grow-1" // Use flex-grow-1 to make it take remaining space
-          sx={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
-          onMouseEnter={() => marqueeRef.current && marqueeRef.current.stop()} // Stop marquee on hover
-          onMouseLeave={() => marqueeRef.current && marqueeRef.current.start()} // Start marquee on mouse leave
+          sx={{
+            flexGrow: 1,
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+          }}
+          onMouseEnter={() => marqueeRef.current?.stop()}
+          onMouseLeave={() => marqueeRef.current?.start()}
         >
-          {/* Using a standard HTML marquee tag as requested, but generally not recommended for accessibility */}
-          <marquee ref={marqueeRef} scrollamount="10" behavior="scroll" direction="left">
-            <Box className="d-flex flex-row" sx={{ display: 'inline-flex', alignItems: 'center' }}>
-              {eventAlerts.map((event) => (
-                <Box key={event.id} sx={{ mx: 1 }}> {/* Add horizontal margin between alerts */}
+          {/* eslint-disable-next-line */}
+          <marquee ref={marqueeRef} scrollAmount="10" behavior="scroll" direction="left">
+            <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
+              {endlessEventAlerts.map((event, index) => (
+                <Box key={`${event.id}-${index}`} sx={{ mx: 1 }}>
                   <Box
-                  
                     role="alert"
                     sx={{
                       backgroundColor: alertBgColor,
-                      color: alertTextColor, // Changed text color for better contrast
-                      borderRadius: '0.375rem', // Bootstrap default alert border-radius
+                      color: alertTextColor,
+                      borderRadius: '0.375rem',
                       display: 'flex',
-                      alignItems: 'center', // Vertically center items (icon and text)
-                      minWidth: '300px', // Ensure alerts have a minimum width for content
-                      mr: 2, // Margin right for separation in marquee
-                      boxShadow: '0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)', // Subtle shadow for professional look
+                      alignItems: 'center',
+                      p: 2,
+                      minWidth: '300px',
+                      boxShadow: '0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)',
                     }}
                   >
-                    {/* PdfIcon is now correctly aligned vertically with text via parent's alignItems */}
-                    <PdfIcon sx={{ ml:2, mt:1, fill: alertTextColor }} />
+                    <PdfIcon sx={{ fill: alertTextColor, mr: 1 }} />
                     <Typography
                       component="a"
                       href={event.link}
                       target="_blank"
                       sx={{
-                        color: 'inherit', // Inherit color from parent Box
-                        textDecoration: 'none', // Remove underline
-                        mx:2,
-                        fontWeight: 500, // Slightly bolder text
+                        color: 'inherit',
+                        textDecoration: 'none',
+                        fontWeight: 500,
                         '&:hover': {
-                          textDecoration: 'underline', // Underline on hover
+                          textDecoration: 'underline',
                         },
                       }}
                     >

@@ -25,6 +25,10 @@ const scrollUp = keyframes`
 
 const ComponentD = () => {
 
+    // Get the base URL from environment variables
+    const BASE_PROGRAMMES_URL = process.env.REACT_APP_WEBSITE_URL;
+    // Add a fallback in case the env variable is not set
+
     const theme = useTheme();
 
     const newsUpdates = [
@@ -54,20 +58,22 @@ const ComponentD = () => {
 
 
     const onGoingProgrammes = [
-        { text: 'NICRA', link: 'https://www.atarikolkata.org/national-initiative-on-climate-resilient-agriculture-nicra/' },
-        { text: 'FFP', link: 'https://www.atarikolkata.org/farmer-first-programme/' },
-        { text: 'TSP', link: 'https://www.atarikolkata.org/tribal-sub-plan-tsp/' },
-        { text: 'ARYA', link: 'https://www.atarikolkata.org/arya/' },
-        { text: 'CFLD on Oilseeds', link: 'https://www.atarikolkata.org/cfld-on-oilseeds/' },
-        { text: 'CFLD on Pulses', link: 'https://www.atarikolkata.org/cfld-on-pulses/' },
-        { text: 'ASCI', link: 'https://www.atarikolkata.org/skill-development-training-programme-asci-2/' },
-        { text: 'Agroforestry', link: 'https://www.atarikolkata.org/agroforestry/' },
-        { text: 'Bee Keeping', link: 'https://www.atarikolkata.org/bee-keeping/' },
-        { text: 'DFI', link: 'https://www.atarikolkata.org/doubling-farmers-income-dfi-2/' },
-        { text: 'FPO', link: 'https://www.atarikolkata.org/farmer-producer-organisation-fpo/' },
-        { text: 'GKMS', link: 'https://www.atarikolkata.org/gramin-krishi-mausam-sewa-district-agro-met-unit/' },
-        { text: 'Integrated Farming', link: 'https://www.atarikolkata.org/integrated-farming/' },
-        { text: 'Natural Farming', link: 'https://www.atarikolkata.org/natural-farming/' },
+        { text: 'Agriculture-Drone Project', link: `${BASE_PROGRAMMES_URL}pdf/Agriculture-Drone-Project.pdf` },
+        { text: 'ARYA', link: `${BASE_PROGRAMMES_URL}pdf/ARYA.pdf` },
+        { text: 'ASCI', link: `${BASE_PROGRAMMES_URL}pdf/ASCI.pdf` },
+        { text: 'CFLD on Oilseeds', link: `${BASE_PROGRAMMES_URL}pdf/CFLD-Oilseed.pdf` },
+        { text: 'CFLD on Pulses', link: `${BASE_PROGRAMMES_URL}pdf/CFLD-Pulses.pdf` },
+        { text: 'DFI', link: `${BASE_PROGRAMMES_URL}pdf/DFI.pdf` },
+        { text: 'Dr. Panjabrao Deshmukh Natural Farming Mission (MS)', link: `${BASE_PROGRAMMES_URL}pdf/Dr. Panjabrao Deshmukh Natural Farming Mission. (MS).pdf` },
+        { text: 'Dr. Panjabrao Deshmukh Natural Farming Mission', link: `${BASE_PROGRAMMES_URL}pdf/Dr. Panjabrao Deshmukh Natural Farming Mission.pdf` },
+        { text: 'FFP', link: `${BASE_PROGRAMMES_URL}pdf/FFP.pdf` },
+        { text: 'FPO', link: `${BASE_PROGRAMMES_URL}pdf/FPO.pdf` },
+        { text: 'GKMS', link: `${BASE_PROGRAMMES_URL}pdf/GKMS.pdf` },
+        { text: 'Natural Farming', link: `${BASE_PROGRAMMES_URL}pdf/Natural-Farming.pdf` },
+        { text: 'NICRA', link: `${BASE_PROGRAMMES_URL}pdf/NICRA.pdf` },
+        { text: 'Special Project on Cotton', link: `${BASE_PROGRAMMES_URL}pdf/SpecialProjectonCotton.pdf` },
+        { text: 'Success Stories', link: `${BASE_PROGRAMMES_URL}pdf/Success-Stories.pdf` },
+        { text: 'TSP', link: `${BASE_PROGRAMMES_URL}pdf/TSP.pdf` },
     ];
 
     const telephoneDirectory = [

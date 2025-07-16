@@ -3,171 +3,43 @@ import { AppBar, Toolbar, Menu, Box, SvgIcon, IconButton, Drawer, List } from '@
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import MenuIcon from '@mui/icons-material/Menu'; // Hamburger icon
-
-// Data structure for navigation items, including nested children and icons
-const navItems = [
-  {
-    label: '', // Empty label for icon-only home button
-    link: '#',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" class="bi bi-house-fill" viewBox="0 0 16 16">
-             <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
-             <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
-           </svg>`,
-  },
-  {
-    label: 'About us',
-    link: '#',
-    children: [
-      { label: 'Organisational set up', link: '#' },
-      { label: 'Mission', link: '#' },
-      { label: 'Vision', link: '#' },
-    ],
-  },
-  { label: 'Staff', link: '#' },
-  {
-    label: 'KVKs',
-    link: '#',
-    children: [
-      { label: 'About KVKs', link: '#' },
-      {
-        label: 'KVKs of ICAR-ATARI',
-        link: '#',
-        children: [
-          { label: 'Rajasthan', link: '#' },
-          { label: 'Haryana', link: '#' },
-          { label: 'Delhi', link: '#' },
-        ],
-      },
-      {
-        label: 'Vice-Chancellors of SAU / CAU',
-        link: '#',
-        children: [
-          { label: 'Rajasthan', link: '#' },
-          { label: 'Haryana', link: '#' },
-          { label: 'Delhi', link: '#' },
-        ],
-      },
-      {
-        label: 'Comptroller of SAUs',
-        link: '#',
-        children: [
-          { label: 'Rajasthan', link: '#' },
-          { label: 'Haryana', link: '#' },
-          { label: 'Delhi', link: '#' },
-        ],
-      },
-      {
-        label: 'Directors of ICAR Insitutes',
-        link: '#',
-        children: [
-          { label: 'Rajasthan', link: '#' },
-          { label: 'Haryana', link: '#' },
-          { label: 'Delhi', link: '#' },
-        ],
-      },
-      {
-        label: 'Presidents of NGOs',
-        link: '#',
-        children: [
-          { label: 'Rajasthan', link: '#' },
-          { label: 'Haryana', link: '#' },
-          { label: 'Delhi', link: '#' },
-        ],
-      },
-      {
-        label: 'Directors of Extension Education',
-        link: '#',
-        children: [
-          { label: 'Rajasthan', link: '#' },
-          { label: 'Haryana', link: '#' },
-          { label: 'Delhi', link: '#' },
-        ],
-      },
-      {
-        label: 'ATICs',
-        link: '#',
-        children: [
-          { label: 'Rajasthan', link: '#' },
-          { label: 'Haryana', link: '#' },
-          { label: 'Delhi', link: '#' },
-        ],
-      },
-      {
-        label: 'Senior Scientist & Head',
-        link: '#',
-        children: [
-          { label: 'Rajasthan', link: '#' },
-          { label: 'Haryana', link: '#' },
-          { label: 'Delhi', link: '#' },
-        ],
-      },
-      {
-        label: 'SAC Meeting',
-        link: '#',
-        children: [
-          {
-            label: '2017 - 18',
-            link: '#',
-            children: [
-              { label: 'Rajasthan', link: '#' },
-              { label: 'Haryana', link: '#' },
-              { label: 'Delhi', link: '#' },
-            ],
-          },
-          {
-            label: '2018 - 19',
-            link: '#',
-            children: [
-              { label: 'Rajasthan', link: '#' },
-              { label: 'Haryana', link: '#' },
-              { label: 'Delhi', link: '#' },
-            ],
-          },
-          {
-            label: '2019 - 20',
-            link: '#',
-            children: [
-              { label: 'Rajasthan', link: '#' },
-              { label: 'Haryana', link: '#' },
-              { label: 'Delhi', link: '#' },
-            ],
-          },
-        ],
-      },
-      { label: 'Reporting Format', link: '#' },
-    ],
-  },
-  { label: 'Projects', link: '#' },
-  { label: 'RTI', link: '#' },
-  { label: 'Gallery', link: '#' },
-  {
-    label: 'Reports',
-    link: '#',
-    children: [
-      { label: 'NPR', link: '#' },
-      { label: 'QPR', link: '#' },
-      { label: 'APR', link: '#' },
-    ],
-  },
-  { label: 'Contact', link: 'Contact.html' },
-  { label: 'Online Payment', link: '#' },
-];
+import { useNavigate, useLocation, Link as RouterLink } from 'react-router-dom'; // Corrected import for RouterLink
+import routesConfig from '../../Data/nav.json'; // Import your centralized routes configuration
 
 /**
  * Renders a menu item, potentially with a nested submenu that opens on click.
  * @param {object} props - The component props.
- * @param {object} props.item - The menu item data (label, link, children, icon).
+ * @param {object} props.item - The menu item data (label, path, children, icon).
  * @param {boolean} [props.isRoot=false] - True if this is a top-level menu item.
  * @param {boolean} [props.isLast=false] - True if this is the last item in its current list.
  * @param {boolean} [props.isMobileDrawer=false] - True if rendering within the mobile drawer.
  * @param {function} [props.onDrawerClose] - Function to close the main mobile drawer.
  */
 const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDrawer = false, onDrawerClose }) => {
+  // React Hooks must be called unconditionally at the top level of the component.
   const [anchorEl, setAnchorEl] = useState(null);
   const [isMobileSubMenuOpen, setIsMobileSubMenuOpen] = useState(false); // State for mobile drawer submenus
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // CRITICAL FIX: Add a check for undefined or null 'item' AFTER hook calls
+  if (!item) {
+    console.warn("MenuItemWithSubmenu received an undefined or null item prop.");
+    return null; // Don't render anything if the item is invalid
+  }
+
   const open = Boolean(anchorEl);
 
-  // Handles opening the submenu on click
+  // Determine if the current path or any child path makes this item 'active'
+  const isActive = location.pathname === item.path || // Changed from item.link to item.path
+    (item.children && item.children.some(child => {
+      // Check direct child path
+      if (child && location.pathname === child.path) return true; // Changed from child.link to child.path
+      // Check grand-children for deeper active states
+      return child && child.children && child.children.some(grandChild => grandChild && location.pathname === grandChild.path); // Changed from grandChild.link to grandChild.path
+    }));
+
+  // Handles opening the submenu or navigating based on context (desktop/mobile)
   const handleClick = (event) => {
     if (isMobileDrawer) {
       if (item.children) {
@@ -175,6 +47,9 @@ const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDra
         setIsMobileSubMenuOpen(!isMobileSubMenuOpen);
       } else {
         // Close the main drawer for leaf items
+        if (item.path && item.path !== '#') { // Changed from item.link to item.path
+          navigate(item.path); // Changed from item.link to item.path for navigation
+        }
         if (onDrawerClose) {
           onDrawerClose();
         }
@@ -184,7 +59,10 @@ const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDra
       if (item.children) {
         setAnchorEl(event.currentTarget);
       } else {
-        // If it's a leaf item (no children), close its own menu
+        // If it's a leaf item (no children), navigate and close its own menu
+        if (item.path && item.path !== '#') { // Changed from item.link to item.path
+          navigate(item.path); // Changed from item.link to item.path for navigation
+        }
         handleClose();
       }
     }
@@ -224,8 +102,39 @@ const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDra
     }
   }
 
+  // Define common styles for menu items
+  const commonLinkStyles = {
+    // Changed active color from 'yellow' to 'lightgreen'
+    color: isActive ? 'lightgreen' : 'white',
+    textTransform: 'none',
+    fontSize: '0.9rem',
+    borderRadius: '0px',
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      boxShadow: 'none',
+    },
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  };
+
+  // Home item specific rendering: no label, only icon
+  const isHomeItem = item.path === '/' && item.icon; // Changed from item.link to item.path
+
+  const itemContent = (
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      {item.icon && (
+        <SvgIcon component={() => <div dangerouslySetInnerHTML={{ __html: item.icon }} />} sx={{ mr: 1 }} />
+      )}
+      {/* Conditionally render label for home item */}
+      {!isHomeItem && item.label}
+    </Box>
+  );
+
   // Define border styles based on whether it's a mobile drawer item or a desktop root item
-  const itemBorderRight = isRoot && !isLast && !isMobileDrawer ? '1px solid rgba(255, 255, 255, 0.2)' : 'none';
+  const itemBorderRight = isRoot && item.path !== '/' ? '1px solid rgba(255, 255, 255, 0.2)' : 'none'; // Changed from item.link to item.path
   // Bottom border for all items in mobile drawer (except last)
   const itemBorderBottom = isMobileDrawer && !isLast ? '1px solid rgba(255, 255, 255, 0.2)' : 'none';
 
@@ -241,6 +150,9 @@ const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDra
           flexDirection: 'column', // Stack children vertically for accordion effect
           alignItems: 'flex-start', // Align content to start
           padding: 0, // Remove default padding from li/box
+          '&:last-child': {
+            borderBottom: 'none', // No border for the last item
+          },
         }}
       >
         <Box
@@ -248,30 +160,18 @@ const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDra
           role="button"
           tabIndex={0}
           sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            width: '100%',
-            color: 'white',
-            textTransform: 'none',
-            fontSize: '0.9rem',
-            padding: '8px 16px',
-            cursor: 'pointer',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              boxShadow: 'none',
-            },
+            ...commonLinkStyles,
+            padding: '8px 16px', // Specific padding for mobile list items
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {item.icon && (
-              <SvgIcon component={() => <div dangerouslySetInnerHTML={{ __html: item.icon }} />} sx={{ mr: 1 }} />
-            )}
-            {item.label}
-          </Box>
-          {item.children && arrowIcon} {/* Render arrow for parents */}
+          {/* For mobile drawer, always use RouterLink for navigation */}
+          <RouterLink to={item.path} style={{ textDecoration: 'none', color: 'inherit', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}> {/* Changed to item.path */}
+            {itemContent}
+            {item.children && arrowIcon} {/* Render arrow for parents */}
+          </RouterLink>
         </Box>
         {item.children && isMobileSubMenuOpen && (
+          // Note: Material-UI List is used here, as it's part of the MenuItemWithSubmenu's internal rendering for mobile
           <List sx={{ pl: 2, width: '100%', padding: 0 }}> {/* Nested list, indented for submenus */}
             {item.children.map((child, index) => (
               <MenuItemWithSubmenu
@@ -298,6 +198,7 @@ const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDra
           position: 'relative',
         }}
       >
+        {/* Main button/link for desktop */}
         <Box
           aria-controls={open ? `menu-${item.label.replace(/\s/g, '-')}` : undefined}
           aria-haspopup="true"
@@ -305,35 +206,31 @@ const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDra
           role="button"
           tabIndex={0}
           sx={{
-            color: 'white',
-            textTransform: 'none',
-            fontSize: '0.9rem',
-            padding: '8px 16px',
-            borderRadius: '0px',
-            cursor: 'pointer',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              boxShadow: 'none',
-            },
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            width: '100%',
-            minWidth: isRoot ? 'auto' : '160px',
+            ...commonLinkStyles,
+            padding: '8px 16px', // Specific padding for desktop menu items
+            minWidth: isRoot ? 'auto' : '160px', // Min width for nested menu items
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {item.icon && (
-              <SvgIcon component={() => <div dangerouslySetInnerHTML={{ __html: item.icon }} />} sx={{ mr: 1 }} />
-            )}
-            {item.label}
-          </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
-            {arrowIcon}
-          </Box>
+          {item.children ? (
+            <>
+              {itemContent}
+              <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
+                {arrowIcon}
+              </Box>
+            </>
+          ) : (
+            // For desktop leaf items, use RouterLink for navigation
+            <RouterLink to={item.path} style={{ textDecoration: 'none', color: 'inherit', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}> {/* Changed to item.path */}
+              {itemContent}
+              <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
+                {arrowIcon}
+              </Box>
+            </RouterLink>
+          )}
         </Box>
         {/* Only render Menu if item has children for desktop popovers */}
         {item.children && (
+          // Note: Material-UI Menu and MenuItem are used here, as they are part of the MenuItemWithSubmenu's internal rendering for desktop
           <Menu
             id={`menu-${item.label.replace(/\s/g, '-')}`}
             anchorEl={anchorEl}
@@ -361,7 +258,15 @@ const MenuItemWithSubmenu = ({ item, isRoot = false, isLast = false, isMobileDra
             }}
           >
             {item.children.map((child, index) => (
-              <MenuItemWithSubmenu key={index} item={child} isLast={index === item.children.length - 1} isMobileDrawer={false} />
+              // RECURSIVELY RENDER MenuItemWithSubmenu for nested items
+              <MenuItemWithSubmenu
+                key={index}
+                item={child}
+                isLast={index === item.children.length - 1}
+                isRoot={false} // Nested items are not root
+                isMobileDrawer={false} // This is for desktop menus
+                onDrawerClose={onDrawerClose} // Pass down the drawer close handler
+              />
             ))}
           </Menu>
         )}
@@ -383,8 +288,8 @@ export default function App() {
   const drawer = (
     <Box sx={{ backgroundColor: '#198754', height: '100%', pt: 2 }}> {/* Bootstrap success color for mobile drawer */}
       <List>
-        {navItems.map((item, index) => (
-          <MenuItemWithSubmenu key={index} item={item} isRoot={true} isLast={index === navItems.length - 1} isMobileDrawer={true} onDrawerClose={handleDrawerToggle} />
+        {routesConfig.map((item, index) => ( // Changed navItems to routesConfig
+          <MenuItemWithSubmenu key={index} item={item} isRoot={true} isLast={index === routesConfig.length - 1} isMobileDrawer={true} onDrawerClose={handleDrawerToggle} />
         ))}
       </List>
     </Box>
@@ -434,8 +339,8 @@ export default function App() {
               width: '100%', // Ensure it takes full width of toolbar
             }}
           >
-            {navItems.map((item, index) => (
-              <MenuItemWithSubmenu key={index} item={item} isRoot={true} isLast={index === navItems.length - 1} isMobileDrawer={false} />
+            {routesConfig.map((item, index) => ( // Changed navItems to routesConfig
+              <MenuItemWithSubmenu key={index} item={item} isRoot={true} isLast={index === routesConfig.length - 1} isMobileDrawer={false} />
             ))}
           </Box>
         </Toolbar>
