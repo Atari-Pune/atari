@@ -110,7 +110,7 @@ const ImportantLinksPage = () => {
       label: 'Sr No',
       align: 'center',
       type: 'custom',
-      render: (value, row, index) => index + 1 // Render serial number
+     render: (value, row) => row.id // Corrected: Use row.id to get the value from the data
     },
     {
       id: 'image',
@@ -118,7 +118,7 @@ const ImportantLinksPage = () => {
       align: 'center',
       type: 'custom',
       render: (value, row) => (
-        <img src={row.image} alt={row.alt} style={{ width: '50px', height: '50px', borderRadius: '5px' }} />
+        <img src={row.image} alt={row.alt} style={{  borderRadius: '5px' }} />
       )
     },
     {

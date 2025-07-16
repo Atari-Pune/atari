@@ -1,6 +1,26 @@
-// src/components/PageLoader.jsx
 import React from 'react';
-import { Box, CircularProgress, Typography } from '@mui/material';
+import { Box, keyframes } from '@mui/material';
+import { styled } from '@mui/system';
+import loadingImage from '../Assets/atrai.gif'; // Adjust the path as necessary
+
+const pulse = keyframes`
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+
+const AnimatedImage = styled('img')({
+  animation: `${pulse} 2s infinite`,
+});
 
 const PageLoader = () => {
   return (
@@ -13,8 +33,7 @@ const PageLoader = () => {
         alignItems: 'center',
       }}
     >
-      <CircularProgress color="success" size={60} />
-      <Typography variant="h6" mt={2}>Loading...</Typography>
+      <AnimatedImage src={loadingImage} alt="Loading" style={{ width: 250, height: 250, marginBottom: 2 }} />
     </Box>
   );
 };

@@ -108,7 +108,7 @@ const renderRoutes = (routes) => {
 const AppRoutes = () => {
     return (
         <Suspense fallback={<PageLoader />}>
-            <Routes>
+            <Routes >
                 {/* Dynamically render all routes from the JSON configuration */}
                 {renderRoutes(routesConfig)}
                 {renderRoutes(localfiles)}

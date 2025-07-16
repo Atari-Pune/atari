@@ -54,7 +54,7 @@ const Notification = () => {
           onMouseLeave={() => marqueeRef.current?.start()}
         >
           {/* eslint-disable-next-line */}
-          <marquee ref={marqueeRef} scrollAmount="10" behavior="scroll" direction="left">
+          <marquee ref={marqueeRef} scrollamount="10" behavior="scroll" direction="left">
             <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
               {endlessEventAlerts.map((event, index) => (
                 <Box key={`${event.id}-${index}`} sx={{ mx: 1 }}>

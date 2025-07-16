@@ -1,25 +1,28 @@
-﻿import React from 'react'
-import Box from '@mui/material/Box';
-import { Grid, Typography } from '@mui/material';
-import Sidebar from "../../Home/Sidebar/sidebar" // This import is incorrect here
+﻿import React from 'react';
+import { Box, Typography } from '@mui/material'; // Keeping Box and Typography for content within Commonpage
+import Commonpage from '../../../Layout/Commonpage'; // Import the reusable Commonpage layout
 
+/**
+ * Component for the "How to Reach Us" page, utilizing the Commonpage layout.
+ * This component focuses on rendering the specific content for directions.
+ */
 const PhotoGallery = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid size={10} sx={{ p: 2, height: '100%' }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-            <Typography variant="h6" gutterBottom component="div" sx={{ mb: 0 }}>
-            PhotoGallery
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid size={2} sx={{ py: 2 }}>
-          <Sidebar />
-        </Grid>
-      </Grid>
-    </Box>
-  )
+    // Wrap the page-specific content with the Commonpage layout component.
+    // Commonpage will handle the header (dynamic title and breadcrumbs) and sidebar.
+    <Commonpage>
+      {/* The content specific to the "How to Reach Us" page */}
+      <Box sx={{ mb: 2 }}>
+        {/* Removed the hardcoded Typography for "How to Reach Us" as Commonpage handles the title */}
+        <Box sx={{ mt: 3, p: 2, border: '1px dashed #ccc', textAlign: 'center', minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
+          <Typography variant="body1" color="text.secondary">
+            Data will be updated soon.
+          </Typography>
+        </Box>
+      </Box>
+    </Commonpage>
+  );
 }
 
-export default PhotoGallery
+
+export default PhotoGallery;

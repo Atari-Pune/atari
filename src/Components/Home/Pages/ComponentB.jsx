@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom'; // Import RouterLink
 
 const ComponentB = () => {
     // Access the environment variable
@@ -8,14 +9,14 @@ const ComponentB = () => {
   const linkColor = '#007bff';     // Bootstrap primary color for links
 
   const quickLinks = [
-    { label: 'Portal', href:'/atari/portal' },
-    { label: 'Important Links', href: '/atari/important-links' },
-    { label: 'Release / Order / Circulars', href: '/atari/release-order-circulars' },
-    { label: 'Programmes', href: '/atari/programmes' },
-    { label: 'Publication', href: '/atari/publications/research-papers-books' },
-    { label: 'Success Stories', href: `${baseUrl}pdf/Success-Stories.pdf` },
-    { label: 'Vigilance Officer', href: '/atari/vigilance-officer' },
-    { label: 'Proceedings', href: '/atari/reports/proceedings' },
+    { label: 'Portal', href:'/portal' }, // Corrected: Removed /atari/
+    { label: 'Important Links', href: '/important-links' }, // Corrected: Removed /atari/
+    { label: 'Release / Order / Circulars', href: '/release-order-circulars' }, // Corrected: Removed /atari/
+    { label: 'Programmes', href: '/programmes' }, // Corrected: Removed /atari/
+    { label: 'Publication', href: '/publications/research-papers-books' }, // Corrected: Removed /atari/
+    { label: 'Success Stories', href: `${baseUrl}pdf/Success-Stories.pdf` }, // This is an external/PDF link
+    { label: 'Vigilance Officer', href: '/vigilance-officer' }, // Corrected: Removed /atari/
+    { label: 'Proceedings', href: '/reports/proceedings' }, // Corrected: Removed /atari/
   ];
 
   return (
@@ -39,25 +40,27 @@ const ComponentB = () => {
       >
         Quick Links
       </Typography>
-      {
-        console.log(process.env.REACT_APP_WEBSITE_URL)
-      }
 
       <Box className="ongoing-links" sx={{ width: '100%' }}>
         <Box className="textwidget" sx={{ width: '100%' }}>
           <List sx={{ p: 0 }}>
             {quickLinks.map((link, index) => {
-                // Check if the link is a PDF file
                 const isPdf = link.href.endsWith('.pdf');
+                // Check if it's an external URL (starts with http or https)
+                const isExternalUrl = link.href.startsWith('http://') || link.href.startsWith('https://');
+                // An internal route is one that is not a PDF and not an external URL (i.e., a relative path within the app)
+                const isInternalRoute = !isPdf && !isExternalUrl;
 
                 return (
                   <ListItem key={index} disablePadding sx={{ mb: 1 }}>
                     <ListItemText>
                       <Typography
-                        component="a"
-                        href={link.href}
-                        // Conditionally apply target="_blank" and rel="noopener noreferrer"
-                        {...(isPdf ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        // Conditionally render as RouterLink for internal app routes, or a standard <a> tag for external/PDF links
+                        component={isInternalRoute ? RouterLink : 'a'}
+                        to={isInternalRoute ? link.href : undefined} // 'to' prop for RouterLink
+                        href={!isInternalRoute ? link.href : undefined} // 'href' prop for 'a' tag
+                        // Conditionally apply target="_blank" and rel="noopener noreferrer" for external/PDF links
+                        {...(isPdf || isExternalUrl ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                         sx={{
                           textDecoration: 'none',
                           color: linkColor,

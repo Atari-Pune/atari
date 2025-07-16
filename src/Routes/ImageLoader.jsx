@@ -1,8 +1,8 @@
-// src/components/ImageLoader.jsx
 import React from 'react';
-import { CircularProgress, Box } from '@mui/material';
+import { Box } from '@mui/material';
+import loadingImage from '../Assets/atrai.gif'; // Adjust the path as necessary
 
-const ImageLoader = ({ size = 40 }) => {
+const ImageLoader = ({ size = 120 }) => {
   return (
     <Box
       sx={{
@@ -11,9 +11,18 @@ const ImageLoader = ({ size = 40 }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        position: 'relative',
       }}
     >
-      <CircularProgress size={size} color="success" />
+      <img
+        src={loadingImage}
+        alt="Loading"
+        style={{
+          width: size,
+          height: size,
+          position: 'absolute',
+        }}
+      />
     </Box>
   );
 };
