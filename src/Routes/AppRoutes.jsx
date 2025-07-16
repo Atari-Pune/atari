@@ -74,7 +74,12 @@ const componentMap = {
     ImportantLinksPage: lazy(() => import('../Components/Home/Pages/ComponentB/ImportantLinksPage')),
     ReleaseOrderCircularsPage: lazy(() => import('../Components/Home/Pages/ComponentB/ReleaseOrderCircularsPage')),
     ProgrammesPage: lazy(() => import('../Components/Home/Pages/ComponentB/ProgrammesPage')),
-    VigilanceOfficerPage: lazy(() => import('../Components/Home/Pages/ComponentB/VigilanceOfficerPage'))
+    VigilanceOfficerPage: lazy(() => import('../Components/Home/Pages/ComponentB/VigilanceOfficerPage')),
+    PrivacyPolicy: lazy(() => import('../Components/Footer/PrivacyPolicy')),
+    LinkingPolicy: lazy(() => import('../Components/Footer/LinkingPolicy')),
+    DisclaimerPolicy: lazy(() => import('../Components/Footer/DisclaimerPolicy')),
+    ContactUs: lazy(() => import('../Components/Footer/ContactUs')),
+    Feedback: lazy(() => import('../Components/Footer/Feedback'))
 
 };
 

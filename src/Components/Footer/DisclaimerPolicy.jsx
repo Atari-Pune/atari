@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Box, Typography } from '@mui/material';
 // Adjust paths as per your project structure
 import CommonLayout from '../../Layout/Fixpage/CommonLayout'; // Your new CommonLayout
@@ -10,8 +10,12 @@ import CommonLayout from '../../Layout/Fixpage/CommonLayout'; // Your new Common
  * since both seem to fall under "Quick Links".
  */
 const customPortalSidebarItems = [
-    { label: 'Home', path: '/' },
-    { label: 'Online Payment', path: '/online-payment' },
+    { label: 'Privacy Policy', path: '/privacy-policy' },
+    { label: 'Linking Policy', path: '/linking-policy' },
+    { label: 'Disclaimer Policy', path: '/disclaimer-policy' },
+    { label: 'Contact Us', path: '/contact-us' },
+    { label: 'Feedback', path: '/feedback' },
+    // Add more items as needed for this specific sidebar
 ];
 
 /**
@@ -20,19 +24,20 @@ const customPortalSidebarItems = [
  */
 const portalBreadcrumbs = [
     { label: 'Home', path: '/' },
-    { label: 'Online Payment' } // Current page, no path for last item
+    { label: 'Quick Links', path: '/important-links' }, // Adjust path if 'Quick Links' has its own landing page
+    { label: 'Disclaimer Policy' } // Current page, no path for last item
 ];
 
 /**
  * Component for the Portal page.
  */
-const OnlinePayment = () => {
+const DisclaimerPolicy = () => {
     return (
         <CommonLayout
-            pageTitle="Online Payment" // REQUIRED page title for the Portal page
+            pageTitle="Disclaimer Policy" // REQUIRED page title for the Portal page
             breadcrumbItems={portalBreadcrumbs} // REQUIRED breadcrumbs for the Portal page
             sidebarNavItems={customPortalSidebarItems} // Pass custom sidebar items
-            sidebarTitle="Online Payment" // Custom sidebar title, consistent with Important Links
+            sidebarTitle="Quick Links" // Custom sidebar title, consistent with Important Links
         >
             <Box sx={{ mb: 2 }}>
                 <Box sx={{ mt: 3, p: 2, border: '1px dashed #ccc', textAlign: 'center', minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
@@ -45,4 +50,4 @@ const OnlinePayment = () => {
     );
 }
 
-export default OnlinePayment;
+export default DisclaimerPolicy;

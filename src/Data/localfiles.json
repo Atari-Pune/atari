@@ -23,5 +23,30 @@
         "label": "Vigilance Officer",
         "path": "/vigilance-officer",
         "component": "VigilanceOfficerPage"
+    },
+    {
+        "label": "Privacy Policy",
+        "path": "/privacy-policy",
+        "component": "PrivacyPolicy"
+    },
+    {
+        "label": "Linking Policy",
+        "path": "/linking-policy",
+        "component": "LinkingPolicy"
+    },
+    {
+        "label": "Disclaimer Policy",
+        "path": "/disclaimer-policy",
+        "component": "DisclaimerPolicy"
+    },
+    {
+        "label": "Contact Us",
+        "path": "/contact-us",
+        "component": "ContactUs"
+    },
+    {
+        "label": "Feedback",
+        "path": "/feedback",
+        "component": "Feedback"
     }
 ]
