@@ -1,0 +1,42 @@
+.card-profile {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      height: 100%;
+    }
+
+    .card-img-top {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #555;
+      flex: 0 0 48%;
+    }
+
+    .info-value {
+      text-align: left;
+      flex: 1;
+      color: #333;
+    }
+
+    @media (max-width: 576px) {
+      .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .info-value {
+        text-align: left;
+      }
+    }

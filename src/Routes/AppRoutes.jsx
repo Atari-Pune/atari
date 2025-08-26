@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import PageLoader from './PageLoader'; // Assuming PageLoader is alongside AppRoutes.jsx
 import routesConfig from '../Data/nav.json'; // Import your centralized routes configuration
 import localfiles from "../Data/localfiles.json" // Import your centralized routes configuration
+import GujaratPortal from '../Components/Home/Pages/ComponentB/GujaratPortal';
 
 // --- Dynamic Component Mapping ---
 // This object maps the 'component' string from routes.json to the actual lazy-loaded component.
@@ -35,7 +36,7 @@ const componentMap = {
     GujaratKvk: lazy(() => import('../Components/Pages/KVKs/SeniorScientistHeadKVKs/GujaratKVK')), // Changed from GujaratKVK to GujaratKvk
     GoaKvk: lazy(() => import('../Components/Pages/KVKs/SeniorScientistHeadKVKs/GoaKVK')), // Changed from GoaKVK to GoaKvk
     Atics: lazy(() => import('../Components/Pages/KVKs/ATICsPage')), // Changed from ATICsPage to Atics
-    SacMeeting2019: lazy(() => import('../Components/Pages/KVKs/SACMeeting/SAC2019_20')), // Changed from SAC2019_20 to SacMeeting2019
+    SacMeetingSAC: lazy(() => import('../Components/Pages/KVKs/SACMeeting/SAC')), // Changed from SAC2019_20 to SacMeeting2019
     SacMeeting2020: lazy(() => import('../Components/Pages/KVKs/SACMeeting/SAC2020_21')), // Changed from SAC2020_21 to SacMeeting2020
     SacMeeting2021: lazy(() => import('../Components/Pages/KVKs/SACMeeting/SAC2021_22')), // Changed from SAC2021_22 to SacMeeting2021
     ReportingFormat: lazy(() => import('../Components/Pages/KVKs/ReportingFormat')),
@@ -43,16 +44,21 @@ const componentMap = {
     AtariGujaratKvk: lazy(() => import('../Components/Pages/KVKs/KVKsOfATARI/KVKsGujarat')), // Changed from KVKsGujarat to AtariGujaratKvk
     AtariGoaKvk: lazy(() => import('../Components/Pages/KVKs/KVKsOfATARI/KVKsGoa')), // Changed from KVKsGoa to AtariGoaKvk
     LandHoldingArea: lazy(() => import('../Components/Pages/KVKs/LandHoldingArea')),
+    ImportantLinks:lazy(()=>import ('../Components/Footer/ImpLinks')),
 
     // Projects Pages
     Projects: lazy(() => import('../Components/Pages/Projects/ProjectsPage')), // Changed from ProjectsPage to Projects
     InternallyFunded: lazy(() => import('../Components/Pages/Projects/InternallyFunded')),
     ExternallyFunded: lazy(() => import('../Components/Pages/Projects/ExternallyFunded')),
     SpecialProgrammes: lazy(() => import('../Components/Pages/Projects/SpecialProgrammes')),
-
+SankalpSeSidhhi:lazy(()=> import('../Components/Pages/Projects/SpecialProgrammes/SankalpSeSidhhi')),
+    KrishiKalyanAbhiyan:lazy(()=> import('../Components/Pages/Projects/SpecialProgrammes/KrishiKalyanAbhiyan')),
+SwachataHiSeva:lazy(()=> import ('../Components/Pages/Projects/SpecialProgrammes/SwachataHiSeva')),
+    
     // Other Top-Level Pages
     Rti: lazy(() => import('../Components/Pages/RTI')), // Changed from RTI to Rti
     PhotoGallery: lazy(() => import('../Components/Pages/Gallery/PhotoGallery')),
+    VideoGallery: lazy(() => import('../Components/Pages/Gallery/VideoGallery')),
     Publications: lazy(() => import('../Components/Pages/Publications/PublicationsPage')), // Changed from PublicationsPage to Publications
     ResearchPapersBooks: lazy(() => import('../Components/Pages/Publications/ResearchPapersBooks')),
     TechnicalBulletins: lazy(() => import('../Components/Pages/Publications/TechnicalBulletins')),
@@ -71,6 +77,7 @@ const componentMap = {
 
     // New Pages for Quick Links
     PortalPage: lazy(() => import('../Components/Home/Pages/ComponentB/PortalPage')),
+    GujaratPortal: lazy(() => import('../Components/Home/Pages/ComponentB/GujaratPortal')),
     ImportantLinksPage: lazy(() => import('../Components/Home/Pages/ComponentB/ImportantLinksPage')),
     ReleaseOrderCircularsPage: lazy(() => import('../Components/Home/Pages/ComponentB/ReleaseOrderCircularsPage')),
     ProgrammesPage: lazy(() => import('../Components/Home/Pages/ComponentB/ProgrammesPage')),

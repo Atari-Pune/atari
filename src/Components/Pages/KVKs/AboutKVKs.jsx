@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 
 import Commonpage from '../../../Layout/Commonpage'; // Updated import path for Commonpage layouts
-
+import ComponentC from '../../Home/Pages/ComponentC';
 const AboutKVKs = () => {
   // The tableData remains specific to this page's content
   const tableData = [
@@ -69,6 +69,7 @@ const AboutKVKs = () => {
           Technology Assessment and Demonstration for its Application and Capacity Development.
         </Typography>
       </Box>
+      <ComponentC></ComponentC>
 
       {/* Activities of KVK Section */}
       <Box sx={{ mt: 4 }}>

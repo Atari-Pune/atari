@@ -18,17 +18,17 @@ const WEBSITE_BASE_URL = process.env.REACT_APP_WEBSITE_URL;
 
 const mapImages = {
     maharashtra: {
-        src: `${WEBSITE_BASE_URL}/images/agroclimaticzone_page-0001.jpg`,
+        src: `https://ik.imagekit.io/ataripune/assets/About%20Us/Agroclimatic%20zones/agroclimaticzone-Maharashtra_page-0001.jpg?updatedAt=1753866715663`,
         alt: "Agro Climatic Zones of Maharashtra",
         title: "Maharashtra Agro Climatic Zones"
     },
     gujarat: {
-        src: `${WEBSITE_BASE_URL}/images/agroclimaticzone_page-0002.jpg`,
+        src: `https://ik.imagekit.io/ataripune/assets/About%20Us/Agroclimatic%20zones/agroclimaticzone-Gujarat_page-0001.jpg?updatedAt=1753866715793`,
         alt: "Agro Climatic Zones of Gujarat",
         title: "Gujarat Agro Climatic Zones"
     },
     goa: {
-        src: `${WEBSITE_BASE_URL}/images/agroclimaticzone_page-0003.jpg`,
+        src: `https://ik.imagekit.io/ataripune/assets/About%20Us/Agroclimatic%20zones/agroclimaticzone-Goa_page-0001.jpg?updatedAt=1753866716123`,
         alt: "Agro Climatic Zones of Goa",
         title: "Goa Agro Climatic Zones"
     },

@@ -8,7 +8,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 
-import AzadiLogo from '../../Assets/Azadi.png';
+// import AzadiLogo from '../../Assets/Azadi.png';
 import AtariLogo from '../../Assets/atari_logo.png';
 import IcarLogo from '../../Assets/ICAR-logo without background.png';
 
@@ -34,8 +34,8 @@ const TitleNavbar = () => {
           flexShrink: 0,
         }}>
           <img
-            src={AzadiLogo}
-            alt="Azadi Logo"
+            src={IcarLogo}
+            alt="ICAR Logo"
             style={{
               height: isMobile ? '30px' : '120px',
               width: 'auto',
@@ -92,15 +92,7 @@ const TitleNavbar = () => {
               objectFit: 'contain'
             }}
           />
-          <img
-            src={IcarLogo}
-            alt="ICAR Logo"
-            style={{
-              height: isMobile ? '30px' : '120px',
-              width: 'auto',
-              objectFit: 'contain'
-            }}
-          />
+          
         </Box>
       </Toolbar>
     </AppBar>

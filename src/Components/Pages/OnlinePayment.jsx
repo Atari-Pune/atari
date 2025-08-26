@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography,Button } from '@mui/material';
 // Adjust paths as per your project structure
 import CommonLayout from '../../Layout/Fixpage/CommonLayout'; // Your new CommonLayout
 
@@ -37,7 +37,19 @@ const OnlinePayment = () => {
             <Box sx={{ mb: 2 }}>
                 <Box sx={{ mt: 3, p: 2, border: '1px dashed #ccc', textAlign: 'center', minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
                     <Typography variant="body1" color="text.secondary">
-                        Content for the Portal will be updated soon.
+                    
+
+          {/* SBI Collect Link Button */}
+          <div
+            variant="contained"
+            color="primary"
+            href="https://www.onlinesbi.sbi/sbicollect/icollecthome.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ px: 4, py: 1.5, fontWeight: 'bold' }}
+          >
+            Pay Now (SBI Collect)
+          </div>
                     </Typography>
                 </Box>
             </Box>

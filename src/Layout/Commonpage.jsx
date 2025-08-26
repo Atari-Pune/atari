@@ -11,6 +11,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
 import Sidebar from '../Components/Home/Sidebar/sidebar'; // Assuming Sidebar is in Components/Home/Sidebar
 import routesConfig from '../Data/nav.json'; // Import routesConfig
+import quickLinksConfig from   '../Data/QuickLinks2.json'; // Import routesConfig
 import './style.css'; // Ensure this CSS file contains the necessary styles
 
 /**
@@ -35,6 +36,15 @@ const findRouteByPath = (routes, path) => {
   return null;
 };
 
+const findRouteByPathInQuickLink = (quickLinksConfig, path) => {
+  for (const route of quickLinksConfig) {
+    if (route.href === path) {
+      return route;
+    }
+  }
+  return null;
+};
+
 /**
  * A reusable common page component that provides a consistent responsive layout
  * including a header with a dynamic title, breadcrumbs, and a sidebar.
@@ -48,7 +58,11 @@ const Commonpage = ({ children }) => {
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   // Determine the current page title dynamically from routesConfig
-  const currentPageRoute = findRouteByPath(routesConfig, location.pathname);
+  var currentPageRoute = findRouteByPath(routesConfig, location.pathname);
+  if(currentPageRoute==null)
+  {
+    currentPageRoute = findRouteByPathInQuickLink(quickLinksConfig, location.pathname);
+  }
   const currentPageTitle = currentPageRoute ? currentPageRoute.label : 'Page Not Found'; // Fallback title
 
   return (

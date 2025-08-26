@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import PageLoader from '../../Routes/PageLoader';
+import ImpLinks from '../Footer/ImpLinks';
 
 // Lazy import your image slider
 const ImageSlider = lazy(() => import('./Slider/ImageSlider')); // adjust path as needed
@@ -14,7 +15,8 @@ const IndexPage = () => {
                 <ImageSlider />
                 <Notification />
                 <Pages />
-                <SocialMedia />
+                {/* <SocialMedia /> */}
+                <ImpLinks/>
             </Suspense>
         </div>
     );

@@ -4,6 +4,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useNavigate, useLocation } from 'react-router-dom';
 import routesConfig from '../../../Data/nav.json';
+import Events from '../../Pages/Gallery/Events'
 
 /**
  * Helper function to find the top-level parent based on the current path.
@@ -218,7 +219,10 @@ const SubNavigationList = () => {
                 {sidebarContentItems.map((item, index) => (
                     <SubNavigationListItem key={index} item={item} level={0} />
                 ))}
+               
             </List>
+            
+             {location.pathname === '/gallery/photo-gallery' && <Events/>}
         </Paper>
     );
 };

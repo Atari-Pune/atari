@@ -48,5 +48,16 @@
         "label": "Feedback",
         "path": "/feedback",
         "component": "Feedback"
+    },
+    {
+        "label": "Mobile Apps",
+        "path": "/mobileapps",
+        "component": "MobileApps"
+    },
+    {
+        "label": "Proceedings",
+        "path": "/proceedings",
+        "component": "Proceedings"
     }
+
 ]

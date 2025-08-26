@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'; // Import RouterLink
+import quickLinks from '../../../Data/QuickLinks2.json'; // Import routesConfig
 
 const ComponentB = () => {
     // Access the environment variable
@@ -8,16 +9,7 @@ const ComponentB = () => {
   const headingColor = '#212529'; // Dark text for headings (Bootstrap default)
   const linkColor = '#007bff';     // Bootstrap primary color for links
 
-  const quickLinks = [
-    { label: 'Portal', href:'/portal' }, // Corrected: Removed /atari/
-    { label: 'Important Links', href: '/important-links' }, // Corrected: Removed /atari/
-    { label: 'Release / Order / Circulars', href: '/release-order-circulars' }, // Corrected: Removed /atari/
-    { label: 'Programmes', href: '/programmes' }, // Corrected: Removed /atari/
-    { label: 'Publication', href: '/publications/research-papers-books' }, // Corrected: Removed /atari/
-    { label: 'Success Stories', href: `${baseUrl}pdf/Success-Stories.pdf` }, // This is an external/PDF link
-    { label: 'Vigilance Officer', href: '/vigilance-officer' }, // Corrected: Removed /atari/
-    { label: 'Proceedings', href: '/reports/proceedings' }, // Corrected: Removed /atari/
-  ];
+
 
   return (
     <Box
@@ -42,7 +34,7 @@ const ComponentB = () => {
       </Typography>
 
       <Box className="ongoing-links" sx={{ width: '100%' }}>
-        <Box className="textwidget" sx={{ width: '100%' }}>
+        <Box className="tromwidget" sx={{ width: '100%' }}>
           <List sx={{ p: 0 }}>
             {quickLinks.map((link, index) => {
                 const isPdf = link.href.endsWith('.pdf');

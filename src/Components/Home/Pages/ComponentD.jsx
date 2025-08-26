@@ -32,6 +32,8 @@ const ComponentD = () => {
     const theme = useTheme();
 
     const newsUpdates = [
+        {text: 'Annual Zonal Workshop Schedule', link:'https://ik.imagekit.io/ataripune/assets/news-updates/news/16.07.2025%20AZW%202025%20ATARI%20Pune%20-Programme%20Schedule.pdf?updatedAt=1753097044072'},
+
         { text: 'Project Completion-cum-Convergence Workshop on Integrated Farming System under ATARI Kolkata organized', link: 'https://www.atarikolkata.org/wp-content/uploads/2023/07/News-Item-on-IFS-for-ATARI-Website.pdf' },
         { text: 'Annual Zonal Workshop 2023 of KVKs under ICAR-ATARI Kolkata organized at Kalimpong', link: 'https://www.atarikolkata.org/wp-content/uploads/2023/06/News-Item-on-AZW-2023.pdf' },
         { text: 'ICAR-ATARI Kolkata organized NICRA Field visit at Paiyong Busty, Kalimpong, W.B.', link: 'https://www.atarikolkata.org/wp-content/uploads/2023/06/News-item-on-NICRA-ZMC-visit.pdf' },
@@ -54,36 +56,38 @@ const ComponentD = () => {
         { text: 'Compassionate appointment of dependent of deceased Group-B and C employees worked at ICAR-ATARI Kolkata', link: 'http://www.atarikolkata.org/wp-content/uploads/2020/07/Compassionate-appointment.pdf' },
         { text: 'Annual Zonal Workshop 2020 of KVKs under ICAR-ATARI Kolkata organized through video conferencing', link: 'http://www.atarikolkata.org/wp-content/uploads/2020/07/News-item-on-Annual-Zonal-Workshop-2020_ATARI-Kolkata.docx' },
         { text: 'Review Meeting of Farmer FIRST Programme Organized', link: 'http://www.atarikolkata.org/wp-content/uploads/2020/01/News-item_-Review-Meeting-of-FFP_-ATARI-Kolkata.docx' },
+    
     ];
 
 
     const onGoingProgrammes = [
-        { text: 'Agriculture-Drone Project', link: `${BASE_PROGRAMMES_URL}pdf/Agriculture-Drone-Project.pdf` },
-        { text: 'ARYA', link: `${BASE_PROGRAMMES_URL}pdf/ARYA.pdf` },
-        { text: 'ASCI', link: `${BASE_PROGRAMMES_URL}pdf/ASCI.pdf` },
-        { text: 'CFLD on Oilseeds', link: `${BASE_PROGRAMMES_URL}pdf/CFLD-Oilseed.pdf` },
-        { text: 'CFLD on Pulses', link: `${BASE_PROGRAMMES_URL}pdf/CFLD-Pulses.pdf` },
-        { text: 'DFI', link: `${BASE_PROGRAMMES_URL}pdf/DFI.pdf` },
-        { text: 'Dr. Panjabrao Deshmukh Natural Farming Mission (MS)', link: `${BASE_PROGRAMMES_URL}pdf/Dr. Panjabrao Deshmukh Natural Farming Mission. (MS).pdf` },
-        { text: 'Dr. Panjabrao Deshmukh Natural Farming Mission', link: `${BASE_PROGRAMMES_URL}pdf/Dr. Panjabrao Deshmukh Natural Farming Mission.pdf` },
-        { text: 'FFP', link: `${BASE_PROGRAMMES_URL}pdf/FFP.pdf` },
-        { text: 'FPO', link: `${BASE_PROGRAMMES_URL}pdf/FPO.pdf` },
-        { text: 'GKMS', link: `${BASE_PROGRAMMES_URL}pdf/GKMS.pdf` },
-        { text: 'Natural Farming', link: `${BASE_PROGRAMMES_URL}pdf/Natural-Farming.pdf` },
-        { text: 'NICRA', link: `${BASE_PROGRAMMES_URL}pdf/NICRA.pdf` },
-        { text: 'Special Project on Cotton', link: `${BASE_PROGRAMMES_URL}pdf/SpecialProjectonCotton.pdf` },
-        { text: 'Success Stories', link: `${BASE_PROGRAMMES_URL}pdf/Success-Stories.pdf` },
-        { text: 'TSP', link: `${BASE_PROGRAMMES_URL}pdf/TSP.pdf` },
+        { text: 'Agriculture-Drone Project', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/Agriculture-Drone-Project.pdf?updatedAt=1753952313164` },
+        { text: 'ARYA', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/ARYA.%20(2).pdf?updatedAt=1753952312945` },
+        { text: 'ASCI', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/ASCI.pdf?updatedAt=1753952312962` },
+        { text: 'CFLD on Oilseeds', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/CFLD-Oilseed.pdf?updatedAt=1753952313464` },
+        { text: 'CFLD on Pulses', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/CFLD-Pulses.pdf?updatedAt=1753952313169` },
+        { text: 'DFI', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/DFI.pdf?updatedAt=1753952313541` },
+        { text: 'Dr. Panjabrao Deshmukh Natural Farming Mission (MS)', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/Dr.%20Panjabrao%20Deshmukh%20Natural%20Farming%20Mission.pdf?updatedAt=1753952313301` },
+        // { text: 'Dr. Panjabrao Deshmukh Natural Farming Mission', link: `${BASE_PROGRAMMES_URL}pdf/Dr. Panjabrao Deshmukh Natural Farming Mission.pdf` },
+        { text: 'FFP', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/FFP.pdf?updatedAt=1753952313547` },
+        { text: 'FPO', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/FPO.pdf?updatedAt=1753952313394` },
+        { text: 'GKMS', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/GKMS.pdf?updatedAt=1753952316890` },
+        { text: 'Natural Farming', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/Natural-Farming.pdf?updatedAt=1753952317757` },
+        { text: 'NICRA', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/NICRA.pdf?updatedAt=1753952317814` },
+        { text: 'Special Project on Cotton', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/SpecialProjectonCotton.pdf?updatedAt=1753952318427` },
+        { text: 'TSP', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/TSP.pdf?updatedAt=1753952318496` },
+        // { text: 'Success Stories', link: `https://ik.imagekit.io/ataripune/assets/On%20Going%20Programs/Success-Stories.pdf?updatedAt=1753952686698` },
+        
     ];
 
     const telephoneDirectory = [
-        { text: 'Director ICAR - ATARI Kanpur', link: '#' },
-        { text: 'Vice Chancellors of Agricultural Universities (SAU/CAU etc.)', link: '#' },
-        { text: 'Directors of ICAR Institutes Having KVK', link: '#' },
-        { text: 'Director of Extension Education', link: '#' },
-        { text: 'Chairman of NGOS', link: '#' },
-        { text: 'KVK Staff Details', link: '#' },
-        { text: 'Telephone Directory of KVKs and Others', link: '#' },
+        { text: 'Director ICAR - ATARI Pune', link: 'https://ik.imagekit.io/ataripune/assets/Contact%20Details/Telephone%20Directory/Contact%20Details%20of%20Director%20ATARI%20Pune.pdf?updatedAt=1753942994710' },
+        { text: 'Vice Chancellors of Agricultural Universities (SAU/CAU etc.)', link: 'https://ik.imagekit.io/ataripune/assets/Contact%20Details/Telephone%20Directory/Updated%20VC%20contact%20details-03.07.2025.pdf?updatedAt=1753942995690' },
+        // { text: 'Directors of ICAR Institutes Having KVK', link: '#' },
+        { text: 'Director of Extension Education', link: 'https://ik.imagekit.io/ataripune/assets/Contact%20Details/Telephone%20Directory/Updated%20ICAR%20DEE%20contact%20details%20updated%2003.07.2025.pdf?updatedAt=1753942996559' },
+        { text: 'Chairman of NGOS', link: 'https://ik.imagekit.io/ataripune/assets/Contact%20Details/Telephone%20Directory/Contact%20Details%20of%20Chairpersons_Secretaries_Presidents%20of%20NGO-KVKs%2019.6.24.pdf?updatedAt=1753942997428' },
+        { text: 'KVK Staff Details', link: 'https://ik.imagekit.io/ataripune/assets/Contact%20Details/Contact%20details%20of%20KVK.pdf?updatedAt=1753682184098' },
+        // { text: 'Telephone Directory of KVKs and Others', link: '#' },
     ];
 
 

@@ -66,14 +66,8 @@
       },
       { "label": "ATICs", "path": "/kvks/atics", "component": "Atics" },
       {
-        "label": "SAC Meeting",
-        "path": "#",
-        "children": [
-          { "label": "2019-20", "path": "/kvks/sac-meeting/2019-20", "component": "SacMeeting2019" },
-          { "label": "2020-21", "path": "/kvks/sac-meeting/2020-21", "component": "SacMeeting2020" },
-          { "label": "2021-22", "path": "/kvks/sac-meeting/2021-22", "component": "SacMeeting2021" }
-        ]
-      },
+        "label": "SAC Meeting","path": "/kvks/sac", "component":"SacMeetingSAC"},
+  
       { "label": "Reporting Format", "path": "/kvks/reporting-format", "component": "ReportingFormat" },
       {
         "label": "KVKs of ATARI",
@@ -94,8 +88,17 @@
     "children": [
       { "label": "Internally Funded", "path": "/projects/internally-funded", "component": "InternallyFunded" },
       { "label": "Externally Funded", "path": "/projects/externally-funded", "component": "ExternallyFunded" },
-      { "label": "Special Programmes", "path": "/projects/special-programmes", "component": "SpecialProgrammes" }
-    ]
+      
+      {
+        "label": "Special Programmes",
+        "path": "/projects/special-programmes",
+        "children": [
+          { "label": "Krishi Kalyan Abhiyan", "path": "/projects/special-programmes/KrishiKalyanAbhiyan", "component": "KrishiKalyanAbhiyan" },
+          { "label": "Swachata Hi Seva", "path": "/projects/special-programmes/SwachataHiSeva", "component": "SwachataHiSeva" },
+          { "label": "Sankalp Se Siddhi", "path": "/projects/special-programmes/SankalpSeSidhhi","component": "SankalpSeSidhhi" }
+        ]
+      }
+      ]
   },
   { "label": "RTI", "path": "/rti", "component": "Rti" },
   {
@@ -103,7 +106,10 @@
     "path": "/gallery",
     "component": "Gallery",
     "children": [
-      { "label": "Photo Gallery", "path": "/gallery/photo-gallery", "component": "PhotoGallery" }
+      { "label": "Photo Gallery", "path": "/gallery/photo-gallery", "component": "PhotoGallery"},
+      
+    { "label": "Video Gallery", "path": "/gallery/video-gallery", "component": "VideoGallery"}
+    
     ]
   },
   {
@@ -113,7 +119,8 @@
     "children": [
       { "label": "Research Papers / Review / Books", "path": "/publications/research-papers-books", "component": "ResearchPapersBooks" },
       { "label": "Technical Bulletins", "path": "/publications/technical-bulletins", "component": "TechnicalBulletins" },
-      { "label": "ATARI News Letters", "path": "/publications/atari-news-letters", "component": "AtariNewsLetters" }
+      { "label": "ATARI News Letters", "path": "/publications/atari-news-letters", "component": "AtariNewsLetters" },
+      { "label": "Proceedings", "path": "/publications/proceedings", "component": "Proceedings" }
     ]
   },
   {
@@ -123,11 +130,12 @@
     "children": [
       { "label": "MPR", "path": "/reports/mpr", "component": "Mpr" },
       { "label": "QPR", "path": "/reports/qpr", "component": "Qpr" },
-      { "label": "APR", "path": "/reports/apr", "component": "Apr" },
-      { "label": "Proceedings", "path": "/reports/proceedings", "component": "Proceedings" }
+      { "label": "Annual Progress Report", "path": "/reports/apr", "component": "Apr" }
+      
     ]
   },
-  { "label": "Mobile Apps", "path": "/mobile-apps", "component": "MobileApps" },
-  { "label": "ATARI KVKs in ICAR-News", "path": "/atari-kvks-in-icar-news", "component": "AtariKvksInIcarNews" },
+  
+  
+  
   { "label": "Online Payment", "path": "/online-payment", "component": "OnlinePayment" }
 ]

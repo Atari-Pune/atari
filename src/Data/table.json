@@ -289,16 +289,7 @@
         "section": "Proceedings",
         "status": "Published"
     },
-    {
-        "id": "proc_ganesh",
-        "fileName": "proceedings-Ganesh .pdf",
-        "filesize": "4.3 MB",
-        "filetype": "pdf",
-        "filepath": "pdf/Proceedings/",
-        "year": "N/A",
-        "section": "Proceedings",
-        "status": "Published"
-    },
+    
     {
         "id": "proc_nicra_revised",
         "fileName": "Revised 1.11.2023 NICRA proceedings.pdf",
@@ -680,4 +671,5 @@
     "section": "Review Paper",
     "status": "Published"
   }
+  
 ]

@@ -1,0 +1,11 @@
+[
+    { "label": "Portal", "href":"/portal" }, 
+     { "label": "Important Links", "href": "/important-links" }, 
+    { "label": "Release / Order / Circulars", "href": "/release-order-circulars" },
+    { "label": "Success Stories", "href": "https://ik.imagekit.io/ataripune/assets/document/pdf/Success%20Stories/Success-Stories.pdf?updatedAt=1756122268368" }, 
+    { "label": "Proceedings", "href": "/proceedings" },
+    { "label": "Mobile Apps", "href": "/mobileapps" },
+    
+   {"label": "ATARI KVKs in ICAR-News", "href": "/atari-kvks-in-icar-news" }
+
+  ]

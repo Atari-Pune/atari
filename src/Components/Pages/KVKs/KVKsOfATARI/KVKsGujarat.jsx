@@ -16,7 +16,7 @@ const KVKsGujarat = () => {
         {/* Removed the hardcoded Typography for "How to Reach Us" as Commonpage handles the title */}
         <Box sx={{ mt: 3, p: 2, border: '1px dashed #ccc', textAlign: 'center', minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
           <Typography variant="body1" color="text.secondary">
-            Data will be updated soon.
+      <embed src="https://ik.imagekit.io/ataripune/assets/Contact%20Details/KVKs%20in%20ATARI/KVKs%20in%20Gujarat.pdf?updatedAt=1753943074114" width="600" height="500" type="application/pdf"/>
           </Typography>
         </Box>
       </Box>

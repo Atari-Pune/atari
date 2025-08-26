@@ -32,7 +32,7 @@ import {
  */
 const TableLayout = ({ data, columns }) => {
   // Access the environment variable for the base URL for file downloads/views.
-  const baseUrl = process.env.WEBSITE_URL || process.env.REACT_APP_WEBSITE_URL || 'http://localhost:3000/'; // Fallback for development
+  const baseUrl = 'https://ik.imagekit.io/ataripune/assets/document/'//process.env.RESOURCE_ATARI_WEBSITE_URL //||process.env.WEBSITE_URL || process.env.REACT_APP_WEBSITE_URL || 'http://localhost:3000/'; // Fallback for development
 
   // Define default columns if no 'columns' prop is provided
   const defaultColumns = [
@@ -94,7 +94,7 @@ const TableLayout = ({ data, columns }) => {
                     : 'pdf/';
 
                   const fullFileUrl = column.fileKey
-                    ? `${baseUrl}${fileBasePath}${encodeURIComponent(row[column.fileKey])}`
+                    ? `${baseUrl}${fileBasePath}${(row[column.fileKey])}`
                     : '#'; // Fallback if fileKey is missing for fileActions type
 
                   return (
@@ -112,7 +112,7 @@ const TableLayout = ({ data, columns }) => {
                             sx={{ textDecoration: 'none' }}
                           >
                             <Button variant="outlined" size="small" sx={{ color: '#198754', borderColor: '#198754', '&:hover': { borderColor: '#146c43', backgroundColor: 'rgba(25, 135, 84, 0.04)' } }}>
-                              View
+                              View 
                             </Button>
                           </Link>
                           <Link

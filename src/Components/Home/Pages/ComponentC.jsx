@@ -21,10 +21,10 @@ const WEBSITE_BASE_URL = process.env.REACT_APP_WEBSITE_URL;
 
 // Dummy image data
 const images = [
-    { label: 'NICRA Workshop at Goa', imgPath: `${WEBSITE_BASE_URL}/images/NICRA Workshop at Goa.jpeg` },
-    { label: 'ICAR-ATARI Institute Building', imgPath: `${WEBSITE_BASE_URL}/images/DSC_8096.JPG` },
-    { label: 'Agricultural Field Research', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9794.JPG` },
-    { label: 'Farmer with Harvest', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9940.JPG` },
+    { label: 'Journey of KVKs', imgPath: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/ATARI%20Building.jpg?updatedAt=1756123585619` },
+    { label: 'Krishi Vigyan Kendras', imgPath: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/ATARI%20Building%2007.10.24.png?updatedAt=1756123584613` },
+    // { label: 'Agricultural Field Research', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9794.JPG` },
+    // { label: 'Farmer with Harvest', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9940.JPG` },
 ];
 
 const ComponentC = () => {
@@ -86,7 +86,7 @@ const ComponentC = () => {
                             sx={{
                                 height: '100%',
                                 width: '100%',
-                                objectFit: 'cover',
+                                objectFit: 'fit',
                                 borderRadius: theme.shape.borderRadius,
                                 transition: 'opacity 0.5s ease-in-out',
                                 opacity: 1,

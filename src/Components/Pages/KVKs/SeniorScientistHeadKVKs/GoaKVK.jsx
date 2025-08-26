@@ -16,7 +16,7 @@ const GoaKVK = () => {
         {/* Removed the hardcoded Typography for "How to Reach Us" as Commonpage handles the title */}
         <Box sx={{ mt: 3, p: 2, border: '1px dashed #ccc', textAlign: 'center', minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
           <Typography variant="body1" color="text.secondary">
-            Data will be updated soon.
+            <embed src="https://ik.imagekit.io/ataripune/assets/Contact%20Details/KVK%20Heads%20contact%20%20/Contact%20Details%20of%20Senior%20Scientist%20&%20Heads%20of%20Goa%20KVKs-09.07.2025.pdf?updatedAt=1753943180202" width="600" height="500" type="application/pdf"/>
           </Typography>
         </Box>
       </Box>

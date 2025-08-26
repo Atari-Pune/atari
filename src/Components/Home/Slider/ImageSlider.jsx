@@ -7,12 +7,12 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 // IMPORTANT: Ensure 'dimensions' are accurately provided as "WIDTHxHEIGHT" strings.
 // Get the base URL from environment variables
 // Add a fallback in case the env variable is not set
-const WEBSITE_BASE_URL = process.env.REACT_APP_WEBSITE_URL;
+const WEBSITE_BASE_URL ='https://ik.imagekit.io/ataripune/assets/images';
 const imageData = [
     {
         id: 5,
         // Construct the src path using the base URL and the relative path to the image
-        src: `${WEBSITE_BASE_URL}/images/NICRA Workshop at Goa.jpeg`,
+        src: `${WEBSITE_BASE_URL}/Slider images/NICRA Workshop at Goa.jpeg`,
         alt: "ICAR-ATARI Institute Building",
         title: "ICAR-ATARI Institute Building",
         fileType: "jpeg", // Corrected fileType to match actual extension
@@ -21,7 +21,7 @@ const imageData = [
     },
     {
         id: 2,
-        src: `${WEBSITE_BASE_URL}/images/DSC_8096.JPG`,
+        src: `${WEBSITE_BASE_URL}/Slider images/DSC_8096.jpeg`,
         alt: "NICRA Workshop at Goa", // Alt text for image 5 is more appropriate here
         title: "NICRA Workshop at Goa", // Title for image 5 is more appropriate here
         fileType: "jpg", // Corrected fileType
@@ -30,7 +30,7 @@ const imageData = [
     },
     {
         id: 3,
-        src: `${WEBSITE_BASE_URL}/images/DSC_9794.JPG`,
+        src: `${WEBSITE_BASE_URL}/Slider images/DSC_9794.jpeg`,
         alt: "Agricultural Field Research",
         title: "Agricultural Field Research", // Added title for consistency
         fileType: "jpg", // Corrected fileType
@@ -39,7 +39,7 @@ const imageData = [
     },
     {
         id: 1,
-        src: `${WEBSITE_BASE_URL}/images/6th%20Zonal%20workshop-1.JPG`,
+        src: `${WEBSITE_BASE_URL}/Slider images/6th%20Zonal%20workshop-1.JPG`,
         alt: "6th Zonal Workshop Image",
         title: "6th Zonal Workshop: Advancing Agricultural Research",
         fileType: "jpg",
@@ -48,7 +48,7 @@ const imageData = [
     },
     {
         id: 4,
-        src: `${WEBSITE_BASE_URL}/images/DSC_9940.JPG`,
+        src: `${WEBSITE_BASE_URL}/Slider images/DSC_9940.jpeg`,
         alt: "Farmer with Harvest",
         title: "Farmer with Harvest", // Added title for consistency
         fileType: "jpg", // Corrected fileType

@@ -14,7 +14,7 @@ const customReleaseOrderCircularsSidebarItems = [
   { label: 'Release / Order / Circulars', path: '/release-order-circulars' },
   { label: 'Programmes', path: '/programmes' },
   { label: 'Publication', path: '/publications/research-papers-books' },
-  { label: 'Vigilance Officer', path: '/vigilance-officer' },
+  // { label: 'Vigilance Officer', path: '/vigilance-officer' },
   { label: 'Proceedings', path: '/reports/proceedings' },
   // Add more items as needed for this specific sidebar
 ];
