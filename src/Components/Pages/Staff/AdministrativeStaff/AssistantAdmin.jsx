@@ -19,7 +19,7 @@ const AssistantAdmin = () => {
     name: 'Shri Sanjay Bhavsar',
     designation: 'Assistant',
     qualification: 'M.Sc.',
-    contact:'02025535660',
+    contact:'020-25535660',
     doj:'12 September 2024',
     photo: 'https://ik.imagekit.io/ataripune/assets/images/staff/Mr.%20Sanjay%20R%20Bhavsar.jpeg?updatedAt=1753095438257', // Replace with actual photo path
   };
@@ -53,9 +53,7 @@ const AssistantAdmin = () => {
             <Typography variant="subtitle1" color="text.secondary" gutterBottom>
               <b>{assistant.designation}</b>
             </Typography>
-            <Typography variant="body1" color="text.primary">
-              <b>Qualification:</b> {assistant.qualification}
-            </Typography>
+            
             <Typography variant="body1" color="text.primary">
               <b>Contact Number:</b> {assistant.contact}
             </Typography>

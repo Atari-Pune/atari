@@ -11,12 +11,12 @@ import recruitmentData from "../../../../Data/Quicklink.json";
  */
 const customReleaseOrderCircularsSidebarItems = [
     { label: 'Portal', path: '/portal' },
-    { label: 'Important Links', path: '/important-links' },
     { label: 'Release / Order / Circulars', path: '/release-order-circulars' },
-    { label: 'Programmes', path: '/programmes' },
-    { label: 'Publication', path: '/publications/research-papers-books' },
-    { label: 'Vigilance Officer', path: '/vigilance-officer' },
-    { label: 'Proceedings', path: '/reports/proceedings' },
+       { label: 'Proceedings', path: '/publications/proceedings' },
+    { label: 'ATARI/KVKs News', path: '/atari-kvks-in-icar-news' },
+    { label: 'Sucess Stories', path: '/success-stories'}
+    // { label: 'Publication', path: '/publications/research-papers-books' },
+    // { label: '', path: '/vigilance-officer' },
     // Add more items as needed for this specific sidebar
 ];
 
@@ -43,10 +43,10 @@ const ReleaseOrderCircularsPage = () => {
     // Define the sections and their corresponding tab labels
     const sections = [
         { id: 'Recruitment', label: 'Recruitment' },
-        { id: 'Orders', label: 'Orders' },
-        { id: 'Circulars', label: 'Circulars' },
-        { id: 'Tenders', label: 'Tenders' },
-        { id: 'Auction', label: 'Auction' },
+        // { id: 'Orders', label: 'Orders' },
+        // { id: 'Circulars', label: 'Circulars' },
+        // { id: 'Tenders', label: 'Tenders' },
+        // { id: 'Auction', label: 'Auction' },
     ];
 
     // Filter the data to show only for the selected tab

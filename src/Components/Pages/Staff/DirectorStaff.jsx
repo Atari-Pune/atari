@@ -6,9 +6,9 @@ const DirectorStaff = () => {
   // Sample data, replace with real info and photo filename as needed
   const director = {
     name: 'Dr. Subrata Kumar Roy',
-    designation: 'Director, ATARI Pune ',
-    qualification: 'Ph.D. in Agricultural Extension',
-    contact:'02025535665',
+    designation: 'Director, ICAR_ATARI Pune ',
+    qualification: 'M.Sc-(Ag)-Agronomy, Ph.D. ARS',
+    contact:'020-25535665',
     doj:'15 March 2023',
     photo: 'https://ik.imagekit.io/ataripune/assets/images/staff/Dr.Subrata%20Kumar%20Roy.jpg?updatedAt=1753161545813', // Placeholder, replace with actual photo
   };

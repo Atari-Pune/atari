@@ -12,7 +12,20 @@ import allReportsData from '../../../Data/table.json';
  */
 const APRReports = () => {
   // Filter the data to show only "Annual Reports" for this page
-  const reportsData = allReportsData.filter(report => report.section === 'Annual Reports');
+  const reportsData = allReportsData
+  .filter(report => report.section === 'Annual Reports')
+  
+.sort((a, b) => {
+      // If it's a number (e.g., year)
+      if (a.year && b.year) {
+        return b.year - a.year;
+      }
+      // If it's a date string
+      if (a.date && b.date) {
+        return new Date(b.date) - new Date(a.date);
+      }
+      return 0;
+    });
   return (
     <Commonpage>
       <Box>

@@ -18,7 +18,7 @@ const AAOAdmin = () => {
     name: 'Mrs Priyanka Kumari',
     designation: 'Assistant Administrative Officer ',
     qualification: 'Ph.D. in Agricultural Extension',
-    contact:'02025535660',
+    contact:'020-25535660',
     doj:'05 April 2022',
     photo: 'https://ik.imagekit.io/ataripune/assets/images/staff/pk.jpg?updatedAt=1753690269713', // Placeholder, replace with actual photo
   };
@@ -51,9 +51,7 @@ const AAOAdmin = () => {
             <Typography variant="subtitle1" color="text.secondary" gutterBottom>
              <b> {aao.designation}</b>
             </Typography>
-            <Typography variant="body1" color="text.primary">
-              <b>Qualification:</b> {aao.qualification}
-            </Typography>
+           
             <Typography variant="body1" color="text.primary">
               <b>Contact Number:</b> {aao.contact}
             </Typography>

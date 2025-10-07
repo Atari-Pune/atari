@@ -5,7 +5,7 @@
         "filesize": "41.8 MB",
         "filetype": "pdf",
         "filepath": "pdf/Annual Report/",
-        "year": "2018-19",
+        "year": "2018",
         "section": "Annual Reports",
         "status": "Published"
     },
@@ -42,10 +42,31 @@
     {
         "id": "ar_2022",
         "fileName": "Annual Report 2022.pdf",
-        "filesize": "58.2 MB",
+        "filesize": "14 MB",
         "filetype": "pdf",
         "filepath": "pdf/Annual Report/",
         "year": "2022",
+        "section": "Annual Reports",
+        "status": "Published"
+    },
+    {
+        "id": "ar_2023",
+        "fileName": "Annual Report 2023.pdf",
+        "filesize": "14 MB",
+        "filetype": "pdf",
+        "filepath": "pdf/Annual Report/",
+        "year": "2023",
+        "section": "Annual Reports",
+        "status": "Published"
+    },
+
+    {
+        "id": "ar_2024",
+        "fileName": "Annual Report 2024.pdf",
+        "filesize": "58.2 MB",
+        "filetype": "pdf",
+        "filepath": "pdf/Annual Report/",
+        "year": "2024",
         "section": "Annual Reports",
         "status": "Published"
     },
@@ -169,6 +190,7 @@
         "section": "QPR Reports",
         "status": "Published"
     },
+    
     {
         "id": "proc_aap_2023_mh",
         "fileName": "AAP 2023 of Maharashtra KVKs proceeding NRCG 22-23 feb 2023.pdf",
@@ -181,7 +203,7 @@
     },
     {
         "id": "proc_zonal_workshop_july_2023",
-        "fileName": "Annual Zonal Workshop 28-30 July 2023 Proceeding.pdf",
+        "fileName": "6th Annual Zonal Workshop 28-30 July 2023 Proceeding.pdf",
         "filesize": "11.2 MB",
         "filetype": "pdf",
         "filepath": "pdf/Proceedings/",
@@ -219,43 +241,25 @@
         "section": "Proceedings",
         "status": "Published"
     },
+    
+    
     {
-        "id": "proc_2024",
-        "fileName": "Proceeding 2024.pdf",
-        "filesize": "1.1 MB",
+        "id": "proc_8th_zonal_workshop",
+        "fileName": "Proceeding of 8th Annual  Zonal Workshop Bhuj 20-22 July 2025.pdf",
+        "filesize": "3 MB",
         "filetype": "pdf",
         "filepath": "pdf/Proceedings/",
-        "year": "2024",
-        "section": "Proceedings",
-        "status": "Published"
-    },
-    {
-        "id": "proc_aap_guj_goa_2023",
-        "fileName": "Proceeding Annual Action Plan Workshop of Gujarat & Goa 15-16 May 2023.pdf",
-        "filesize": "1.4 MB",
-        "filetype": "pdf",
-        "filepath": "pdf/Proceedings/",
-        "year": "2023",
-        "section": "Proceedings",
-        "status": "Published"
-    },
-    {
-        "id": "proc_7th_zonal_workshop",
-        "fileName": "Proceeding of 7th Annual Zonal workshop.pdf",
-        "filesize": "20.8 MB",
-        "filetype": "pdf",
-        "filepath": "pdf/Proceedings/",
-        "year": "N/A",
+        "year": "2025",
         "section": "Proceedings",
         "status": "Published"
     },
     {
         "id": "proc_aawp_guj_aau",
-        "fileName": "Proceeding of Annual AAWP KVKs of Gujarat State at AAU Anand Gujarat.pdf",
+        "fileName": "Proceeding Annual Action Plan Workshop of Gujarat & Goa 15-16 May 2023.pdf",
         "filesize": "2.7 MB",
         "filetype": "pdf",
         "filepath": "pdf/Proceedings/",
-        "year": "N/A",
+        "year": "2023",
         "section": "Proceedings",
         "status": "Published"
     },
@@ -269,16 +273,7 @@
         "section": "Proceedings",
         "status": "Published"
     },
-    {
-        "id": "proc_annual_workshop_nashik_compressed",
-        "fileName": "Proceeding of Annual Workshop 13-14 Nashik-compressed.pdf",
-        "filesize": "1.9 MB",
-        "filetype": "pdf",
-        "filepath": "pdf/Proceedings/",
-        "year": "N/A",
-        "section": "Proceedings",
-        "status": "Published"
-    },
+    
     {
         "id": "proc_aap_2020_gujarat",
         "fileName": "Proceedings-Annual Action Plan-2020-Gujarat-14 Feb 2020.pdf",
@@ -292,7 +287,7 @@
     
     {
         "id": "proc_nicra_revised",
-        "fileName": "Revised 1.11.2023 NICRA proceedings.pdf",
+        "fileName": "NICRA proceedings.pdf",
         "filesize": "2.5 MB",
         "filetype": "pdf",
         "filepath": "pdf/Proceedings/",
@@ -300,92 +295,147 @@
         "section": "Proceedings",
         "status": "Published"
     },
+
+
+    {
+        "id": "tb_rbiadvsfarmer",
+        "fileName": "ICAR Rabi Agro-Advisories for Farmers 2025.pdf",
+        "filesize": "9.4 MB",
+        "filetype": "pdf",
+        "filepath": "pdf/Technical Bulletins/",
+        "year": "2025",
+        "section": "Technical Bulletins",
+        "status": "Available"
+    },
+
+
+{
+        "id": "tb_rbiadvis",
+        "fileName": "Rabi Agro-Advisories (Regional Language) 2025.pdf",
+        "filesize": "9.4 MB",
+        "filetype": "pdf",
+        "filepath": "pdf/Technical Bulletins/",
+        "year": "2025",
+        "section": "Technical Bulletins",
+        "status": "Available"
+    },
+
+    {
+        "id": "tb_ARYA",
+        "fileName": "Accomplishments of ARYA Project in Maharashtra and Gujarat.pdf",
+        "filesize": "9.4 MB",
+        "filetype": "pdf",
+        "filepath": "pdf/Technical Bulletins/",
+        "year": "2025",
+        "section": "Technical Bulletins",
+        "status": "Available"
+    },
     {
         "id": "tb_ffp_initiatives",
-        "fileName": "1713998571.FFP Initiatives beyond Production & Productivity.pdf",
+        "fileName": "FFP Initiatives beyond Production & Productivity.pdf",
         "filesize": "7.9 MB",
         "filetype": "pdf",
         "filepath": "pdf/Technical Bulletins/",
-        "year": "N/A",
+        "year": "2023",
+        "section": "Technical Bulletins",
+        "status": "Available"
+    },
+    {
+        "id": "tb_Resource_Mobilization_under_CSR",
+        "fileName": "Resource Mobilization under CSR.pdf",
+        "filesize": "5 MB",
+        "filetype": "pdf",
+        "filepath": "pdf/Technical Bulletins/",
+        "year": "2025",
         "section": "Technical Bulletins",
         "status": "Available"
     },
     {
         "id": "tb_arya_book",
-        "fileName": "1713998640.ARYA Book, ATARI Pune.pdf",
+        "fileName": "Attracting and Retaining Youth In Agriculture.pdf",
         "filesize": "3.2 MB",
         "filetype": "pdf",
         "filepath": "pdf/Technical Bulletins/",
-        "year": "N/A",
+        "year": "2020",
         "section": "Technical Bulletins",
         "status": "Available"
     },
     {
         "id": "tb_farmer_first",
-        "fileName": "1713998759.Farmer FIRST publication.pdf",
+        "fileName": "Farmer FIRST publication.pdf",
         "filesize": "6.4 MB",
         "filetype": "pdf",
         "filepath": "pdf/Technical Bulletins/",
-        "year": "N/A",
+        "year": "2020",
         "section": "Technical Bulletins",
         "status": "Available"
     },
     {
         "id": "tb_farmstress",
-        "fileName": "1713998876.farmstress.pdf",
+        "fileName": "Farmstress.pdf",
         "filesize": "6.7 MB",
         "filetype": "pdf",
         "filepath": "pdf/Technical Bulletins/",
-        "year": "N/A",
+        "year": "2018",
         "section": "Technical Bulletins",
         "status": "Available"
     },
     {
         "id": "tb_nutrition_book",
-        "fileName": "1713999694.Nutrition Book Final.pdf",
+        "fileName": "Nutritional Security of Farm Families through KVKs.pdf",
         "filesize": "14.7 MB",
         "filetype": "pdf",
         "filepath": "pdf/Technical Bulletins/",
-        "year": "N/A",
+        "year": "2021",
         "section": "Technical Bulletins",
         "status": "Available"
     },
     {
         "id": "tb_janjati_divas",
-        "fileName": "Final Compile Janjati Divas.pdf",
+        "fileName": "Janjati Divas.pdf",
         "filesize": "3.3 MB",
         "filetype": "pdf",
         "filepath": "pdf/Technical Bulletins/",
-        "year": "N/A",
+        "year": "2023",
         "section": "Technical Bulletins",
         "status": "Available"
     },
     {
         "id": "tb_vksb",
-        "fileName": "Final compile VKSB.pdf",
+        "fileName": "Viksit Sankalp Bharat Yatra.pdf",
         "filesize": "12.1 MB",
         "filetype": "pdf",
         "filepath": "pdf/Technical Bulletins/",
-        "year": "N/A",
+        "year": "2023",
+        "section": "Technical Bulletins",
+        "status": "Available"
+    },{
+        "id": "tb_clsat",
+        "fileName": "Cases of Large Scale Adoption of Technologies in ATARI Zone VIII.pdf",
+        "filesize": "9.4 MB",
+        "filetype": "pdf",
+        "filepath": "pdf/Technical Bulletins/",
+        "year": "2025",
         "section": "Technical Bulletins",
         "status": "Available"
     },
+    
     {
         "id": "news_march_2024",
-        "fileName": "Atari Newsletter March 2024 (1).pdf",
+        "fileName": "Atari Newsletter March 2024.pdf",
         "filesize": "6.5 MB",
         "filetype": "pdf",
-        "filepath": "pdf/ATARI NewsLetters/",
+        "filepath": "pdf/ATARI News Letters/",
         "year": "2024",
         "section": "ATARI NewsLetters",
         "status": "Published"
     },
     {
         "id": "news_jan_jun_2023",
-        "fileName": "Final Atari Newsletter January june 2023 12 page.pdf",
+        "fileName": "Atari Newsletter January-June 2023.pdf",
         "filesize": "3.4 MB",
         "filetype": "pdf",
-        "filepath": "pdf/ATARI NewsLetters/",
+        "filepath": "pdf/ATARI News Letters/",
         "year": "2023",
         "section": "ATARI NewsLetters",
         "status": "Published"
@@ -457,7 +507,7 @@
     "filesize": "323 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2023",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -467,7 +517,7 @@
     "filesize": "286 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2020",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -477,7 +527,7 @@
     "filesize": "16.2 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2022",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -487,7 +537,7 @@
     "filesize": "1.7 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2024",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -497,7 +547,7 @@
     "filesize": "180 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2024",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -507,7 +557,7 @@
     "filesize": "272 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2019",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -517,7 +567,7 @@
     "filesize": "3.9 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2023",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -527,17 +577,17 @@
     "filesize": "4.4 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "2023",
+    "year": "2019",
     "section": "Review Paper",
     "status": "Published"
   },
   {
     "id": "ra_handbook_natural_farming",
-    "fileName": "Hand book on Natural Farming Principles & pratices vol -I.pdf",
+    "fileName": "Handbook on Natural Farming Principles & practices vol -I.pdf",
     "filesize": "29.8 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2023",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -547,7 +597,7 @@
     "filesize": "1.5 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2019",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -557,13 +607,13 @@
     "filesize": "281 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2019",
     "section": "Review Paper",
     "status": "Published"
   },
   {
     "id": "ra_indian_farming_march_2024_special_issue",
-    "fileName": "Indian Farming March 2024 Special Issue (1).pdf",
+    "fileName": "Indian Farming March 2024 Special Issue.pdf",
     "filesize": "9.9 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
@@ -587,7 +637,7 @@
     "filesize": "12.7 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2023",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -603,7 +653,7 @@
   },
   {
     "id": "ra_kheti_march_2024_final",
-    "fileName": "KHETI MARCH 2024 FINAL (1).pdf",
+    "fileName": "KHETI MARCH 2024 FINAL.pdf",
     "filesize": "13.4 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
@@ -617,7 +667,7 @@
     "filesize": "1.0 MB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2023",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -627,7 +677,7 @@
     "filesize": "240 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2017",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -637,7 +687,7 @@
     "filesize": "386 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2017",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -647,7 +697,7 @@
     "filesize": "1023 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2017",
     "section": "Review Paper",
     "status": "Published"
   },
@@ -667,9 +717,41 @@
     "filesize": "276 kB",
     "filetype": "pdf",
     "filepath": "pdf/Review Paper/",
-    "year": "N/A",
+    "year": "2018",
     "section": "Review Paper",
     "status": "Published"
+  },
+  {
+    "id": "bk_Building_Self_Reliant_INDIA_Through_Techno-Rich_Extension_System_in_Agriculture_and_Allied_Sectors",
+    "fileName": "Building Self Reliant INDIA Through Techno-Rich Extension System in Agriculture and Allied Sectors.pdf",
+    "filesize": "276 kB",
+    "filetype": "pdf",
+    "filepath": "pdf/Books/",
+    "year": "2021",
+    "section": "Books",
+    "status": "Published"
+  },{
+    "id": "Journey_Of_KVKs",
+    "fileName": "Journey Of KVKs.pdf",
+    "filesize": "276 kB",
+    "filetype": "pdf",
+    "filepath": "pdf/Journey Books/",
+    "year": "2025",
+    "section": "KVKJourney",
+    "status": "Published"
+  },
+  
+  {
+    "id": "5_Years_Journey_of_ATARI_Pune",
+    "fileName": "5 Years Journey of ATARI Pune.pdf",
+    "filesize": "276 kB",
+    "filetype": "pdf",
+    "filepath": "pdf/Journey Books/",
+    "year": "2023",
+    "section": "ATARIJourney",
+    "status": "Published"
   }
+  
+  
   
 ]

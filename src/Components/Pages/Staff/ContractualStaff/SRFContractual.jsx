@@ -30,13 +30,7 @@ const staffMembers = [
     photo:'https://ik.imagekit.io/ataripune/assets/images/staff/Aarti%20Patole.png?updatedAt=1753095438286',// Replace with actual photo path
   },
   
-  {
-    name: 'Shri Mahesh Jadhav' ,
-    designation: 'SRF',
-    project:'ARYA',
-    qualification: 'M.Sc. Agriculture Meteorology',
-    photo: 'https://ik.imagekit.io/ataripune/assets/images/staff/Mahesh%20Bhalchandra%20Jadhav.jpg?updatedAt=1753095438227',
-  },
+  
   {
     name: 'Dr Sneha Patil',
     designation: ' SRF',

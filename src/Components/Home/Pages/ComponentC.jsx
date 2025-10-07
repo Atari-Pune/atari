@@ -20,16 +20,17 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 const WEBSITE_BASE_URL = process.env.REACT_APP_WEBSITE_URL;
 
 // Dummy image data
-const images = [
-    { label: 'Journey of KVKs', imgPath: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/ATARI%20Building.jpg?updatedAt=1756123585619` },
-    { label: 'Krishi Vigyan Kendras', imgPath: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/ATARI%20Building%2007.10.24.png?updatedAt=1756123584613` },
-    // { label: 'Agricultural Field Research', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9794.JPG` },
-    // { label: 'Farmer with Harvest', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9940.JPG` },
-];
+// const images = [
+//     { label: 'Journey of KVKs', imgPath: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/ATARI%20Building.jpg?updatedAt=1756123585619` },
+//     { label: 'Krishi Vigyan Kendras', imgPath: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/ATARI%20Building%2007.10.24.png?updatedAt=1756123584613` },
+//     // { label: 'Agricultural Field Research', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9794.JPG` },
+//     // { label: 'Farmer with Harvest', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9940.JPG` },
+// ];
 
-const ComponentC = () => {
+const ComponentC = (imageData) => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
+    const images=imageData.imageData
     const maxSteps = images.length;
 
     const handleNext = useCallback(() => {

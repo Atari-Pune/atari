@@ -16,7 +16,7 @@ const SAC= () => {
         {/* Removed the hardcoded Typography for "How to Reach Us" as Commonpage handles the title */}
         <Box sx={{ mt: 3, p: 2, border: '1px dashed #ccc', textAlign: 'center', minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
           <Typography variant="body1" color="text.secondary">
-           <embed src="https://ik.imagekit.io/ataripune/assets/SAC%20Meetings/SAC_MEETINGS%2023.05.2023.pdf?updatedAt=1754307121133" width="500" height="500" type="application/pdf"/>
+           <embed src="https://ik.imagekit.io/ataripune/assets/SAC%20Meetings/SAC_MEETINGS%2023.05.2023.pdf?updatedAt=1754307121133" width="1000" height="500" type="application/pdf"/>
             
           </Typography>
         </Box>

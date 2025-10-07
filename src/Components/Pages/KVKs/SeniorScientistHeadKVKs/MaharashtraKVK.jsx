@@ -19,7 +19,7 @@ const MaharashtraKVK = () => {
             {/* <a href={'https://ik.imagekit.io/ataripune/assets/Contact%20Details/Contact%20details%20of%20KVK.pdf?updatedAt=1753682184098'} target="_blank" rel="noopener noreferrer"> */}
   {/* View Uploaded PDF */}
 {/* </a> */}
-<embed src="https://ik.imagekit.io/ataripune/assets/Contact%20Details/KVK%20Heads%20contact%20%20/Contact%20details%20of%20KVK%20Heads%20%20-%20Maharashtra%20.pdf?updatedAt=1753943179357" width="700" height="500" type="application/pdf"/>
+<embed src="https://ik.imagekit.io/ataripune/assets/Contact%20Details/KVK%20Heads%20contact%20%20/Contact%20details%20of%20KVK%20Heads%20%20-%20Maharashtra%20.pdf?updatedAt=1753943179357" width="1000" height="500" type="application/pdf"/>
           </Typography>
         </Box>
       </Box>

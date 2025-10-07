@@ -1,81 +1,61 @@
 ﻿import React from 'react';
-import { Box, Typography } from '@mui/material'; // Keeping Box and Typography for content within Commonpage
-import  { useState, useEffect } from "react";
-// import ReactPaginate from "react-paginate";
- import "./NewsList.css";
-
+import { Box, Typography, Grid, Card, CardContent, Avatar,Container,CardMedia} from '@mui/material'; // Keeping Box and Typography for content within Commonpage
 import Commonpage from '../../../../Layout/Commonpage'; // Import the reusable Commonpage layout
 
-import {  Grid, Card, CardContent, Avatar,Container,CardMedia } from '@mui/material';
+// import {  Grid, Card, CardContent, Avatar } from '@mui/material';
 
 /**
  * Component for the "How to Reach Us" page, utilizing the Commonpage layout.
  * This component focuses on rendering the specific content for directions.
- 
- */
+  */
 
+
+// Sample staff data (replace with real data and image paths)
 
 
 const SeniorScientist = () => {
- 
-const [news, setNews] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    fetch("/news-list.json")
-      .then((res) => res.json())
-      .then((data) => setNews(data))
-      .catch((err) => console.error("Error loading news:", err));
-  }, []);
-
-  const filteredNews = news.filter(
-    (item) =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.date.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
+  const srscientist = 
+  {
+    name: '',
+    designation: '',
+    qualification: '',
+    contact:'020-25535660',
+    doj:'',
+    photo: '', // Replace with actual photo path
+  };
   return (
-    <div className="news-container">
-      <h2>Publication Downloads</h2>
-      <input
-        type="text"
-        placeholder="Search by name or date"
-        className="search-input"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <table className="styled-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Year</th>
-            <th>File Type</th>
-            <th>File Size</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredNews.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>{item.year}</td>
-              <td>{item.type}</td>
-              <td>{item.size}</td>
-              <td>
-                <a href={item.viewUrl} className="btn view-btn" target="_blank" rel="noreferrer">
-                  VIEW
-                </a>
-                <a href={item.downloadUrl} className="btn download-btn" target="_blank" rel="noreferrer">
-                  DOWNLOAD
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    // Wrap the page-specific content with the Commonpage layout component.
+    // Commonpage will handle the header (dynamic title and breadcrumbs) and sidebar.
+    <Commonpage>
+      <Container maxWidth="sm" sx={{ mt: 6, mb: 4 }}>
+        <Card sx={{ boxShadow: 6, borderRadius: 4, overflow: 'visible', textAlign: 'center', pt: 4 }}>
+          <CardMedia
+            component="img"
+            image={srscientist.photo}
+            alt={srscientist.name}
+            sx={{
+              width: 140,
+              height: 140,
+              borderRadius: '50%',
+              objectFit: 'cover',
+              mx: 'auto',
+              mt: -8,
+              boxShadow: 3,
+              border: '4px solid #fff',
+              background: '#f5f5f5',
+            }}
+          />
+          <CardContent>
+            <Typography variant="h5" fontWeight={700} gutterBottom>
+             No Data Found
+            </Typography>
+            
+          </CardContent>
+        </Card>
+      </Container>
+    </Commonpage>
   );
-};
+}
 
 
 export default SeniorScientist

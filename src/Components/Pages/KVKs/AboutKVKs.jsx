@@ -29,7 +29,12 @@ const AboutKVKs = () => {
     { organization: 'Other Educational Institutions', kvks: 5 },
     { organization: 'Total', kvks: 731, isTotal: true },
   ];
-
+ const images = [
+    { label: 'Journey of KVKs', imgPath: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/Journey%20of%20KVKs%20.webp?updatedAt=1755153917821` },
+    { label: 'Krishi Vigyan Kendras', imgPath: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/Krishi%20Vigyan%20Kendras.webp?updatedAt=1755153917980` },
+    // { label: 'Agricultural Field Research', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9794.JPG` },
+    // { label: 'Farmer with Harvest', imgPath: `${WEBSITE_BASE_URL}/images/DSC_9940.JPG` },
+];
   return (
     // Wrap the page-specific content with the Commonpage layout component
     // The page title ("About Krishi Vigyan Kendras") will be dynamically determined by Commonpage
@@ -69,7 +74,7 @@ const AboutKVKs = () => {
           Technology Assessment and Demonstration for its Application and Capacity Development.
         </Typography>
       </Box>
-      <ComponentC></ComponentC>
+      <ComponentC imageData={images}></ComponentC>
 
       {/* Activities of KVK Section */}
       <Box sx={{ mt: 4 }}>

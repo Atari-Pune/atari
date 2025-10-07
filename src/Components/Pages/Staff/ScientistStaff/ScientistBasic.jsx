@@ -15,7 +15,7 @@ const staffMembers = [
     name: 'Shri Tushar Athare',
     designation: 'Scientist',
     qualification: 'M.Sc. Agriculture',
-    contact:'02025535660',
+    contact:'020-25535660',
     doj:'10 October 2021',
     photo: 'https://ik.imagekit.io/ataripune/assets/images/staff/tathare.jpg?updatedAt=1753690271718', // Replace with actual photo path
   },
@@ -23,7 +23,7 @@ const staffMembers = [
     name: 'Dr Rajesh T',
     designation: 'Scientist',
     qualification: 'PhD in Agriculture Economics',
-    contact:'02025535660',
+    contact:'020-25535660',
     doj:'04 October 2021',
     photo: 'https://ik.imagekit.io/ataripune/assets/images/staff/rajesh.jpg?updatedAt=1753690270515', // Replace with actual photo path
   },

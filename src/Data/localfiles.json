@@ -58,6 +58,15 @@
         "label": "Proceedings",
         "path": "/proceedings",
         "component": "Proceedings"
+    },
+    {
+        "label": "ATARI KVKs in ICAR-News",
+        "path": "/atari-kvks-in-icar-news",
+        "component": "AtariKvksInIcarNews"
+    },
+    {
+        "label": "Success Stories",
+        "path": "/success-stories",
+        "component": "SuccessStories"
     }
-
 ]

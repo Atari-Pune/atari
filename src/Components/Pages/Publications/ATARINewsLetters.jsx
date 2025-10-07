@@ -12,7 +12,9 @@ import allReportsData from '../../../Data/table.json';
  */
 const ATARINewsLetters = () => {
   // Filter the data to show only "ATARI News Letters" for this page
-  const reportsData = allReportsData.filter(report => report.section === 'ATARI NewsLetters');
+  const reportsData = allReportsData.filter(report => report.section === 'ATARI NewsLetters')
+  .filter(report => report.section === 'ATARI NewsLetters')
+    .sort((a, b) => b.year - a.year); 
   return (
     <Commonpage>
       <Box>

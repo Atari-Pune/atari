@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import Commonpage from '../../../Layout/Commonpage';
 import TableLayout from '../../../Layout/TableLayout';
 import { Box, Tab, Tabs } from '@mui/material'; // Import Tabs from @mui/material
@@ -9,9 +9,9 @@ import allReportsData from '../../../Data/table.json';
  * Component for the Research Papers, Reviews, Books, and Presentations page.
  * It uses a tabbed interface to display data filtered by section.
  */
-const ResearchPapersBooks = () => {
+const JourneyBooks = () => {
 
-  const [selectedTab, setSelectedTab] = useState('Review Paper'); // Default to 'Review Papers' tab
+  const [selectedTab, setSelectedTab] = useState('ATARIJourney'); // Default to 'Review Papers' tab
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
     
@@ -20,10 +20,11 @@ const ResearchPapersBooks = () => {
   
   // Define the sections and their corresponding tab labels
   const sections = [
-        { id: 'Review Paper', label: 'Review Paper' },
-        { id: 'Presentations', label: 'Presentations' },
+       
+        { id: 'ATARIJourney', label: '5 Years Journey Of ATARI' },
+         { id: 'KVKJourney', label: 'Journey Of KVKs' }
     // { id: 'Research Papers', label: 'Research Papers' },
-     { id: 'Books', label: 'Books' },
+     //{ id: 'Books', label: 'Books' },
   ];
   
   
@@ -99,4 +100,4 @@ const ResearchPapersBooks = () => {
   );
 }
 
-export default ResearchPapersBooks;
+export default JourneyBooks;

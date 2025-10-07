@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
           <div className="col-12 mt-2">
             <p className="text-center" style={{ color: '#F5F5F5' }}>
-              &copy; {new Date().getFullYear()} www.ataripune.icar.gov.in. All rights reserved.
+              &copy; {new Date().getFullYear()} www.ataripune.org.in. All rights reserved.
             </p>
           </div>
         </div>

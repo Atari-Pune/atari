@@ -2,26 +2,38 @@
 import {Box, Typography,Cards } from '@mui/material';
 // Adjust paths as per your project structure
 import CommonLayout from '../../Layout/Fixpage/CommonLayout'; // Your new CommonLayout
-
+import quickLinks from '../../Data/QuickLinks2.json'; // Import routesConfig
 /**
  * Define the custom sidebar navigation items for this specific page.
  * These will be passed directly to SidebarLayout.
  * We'll use the same items as ImportantLinksPage for consistency
  * since both seem to fall under "Quick Links".
  */
-const customPortalSidebarItems = [
-    { label: 'Home', path: '/' },
-    { label: 'Mobile Apps', path: '/mobile-apps' },
+
+const customMobileAppsSidebarItems = quickLinks.map(obj => {
+  return {
+    ...obj,
+    path: obj.href,
+    // Remove oldKey
+    ...(delete obj.href && {})
+  };
+});
+const mobileappsBreadcrumbs = [
+  { label: 'Home', path: '/' },
+  { label: 'Quick Links', path: '/important-links' }, // Adjust path if 'Quick Links' has its own landing page
+  { label: 'Portal' } // Current page, no path for last item
 ];
+
+
+
+
+
+
 
 /**
  * Define custom breadcrumb items for this specific page.
  * The last item should typically not have a 'path' property if it's the current page.
  */
-const portalBreadcrumbs = [
-    { label: 'Home', path: '/' },
-    { label: 'Mobile Apps' } // Current page, no path for last item
-];
 
 
 const cards = [
@@ -60,9 +72,9 @@ const MobileApps = () => {
     return (
         <CommonLayout
             pageTitle="Mobile Apps" // REQUIRED page title for the Portal page
-            breadcrumbItems={portalBreadcrumbs} // REQUIRED breadcrumbs for the Portal page
-            sidebarNavItems={customPortalSidebarItems} // Pass custom sidebar items
-            sidebarTitle="Mobile Apps" // Custom sidebar title, consistent with Important Links
+            breadcrumbItems={ mobileappsBreadcrumbs} // REQUIRED breadcrumbs for the Portal page
+            sidebarNavItems={customMobileAppsSidebarItems} // Pass custom sidebar items
+            sidebarTitle="Quick Links" // Custom sidebar title, consistent with Important Links
         >
             <Box sx={{ mb: 2 }}>
                 <Box sx={{ mt: 3, p: 2, border: '1px dashed #ccc', textAlign: 'center', minHeight: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>

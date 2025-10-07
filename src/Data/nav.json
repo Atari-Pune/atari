@@ -107,6 +107,7 @@
     "component": "Gallery",
     "children": [
       { "label": "Photo Gallery", "path": "/gallery/photo-gallery", "component": "PhotoGallery"},
+     
       
     { "label": "Video Gallery", "path": "/gallery/video-gallery", "component": "VideoGallery"}
     
@@ -120,7 +121,8 @@
       { "label": "Research Papers / Review / Books", "path": "/publications/research-papers-books", "component": "ResearchPapersBooks" },
       { "label": "Technical Bulletins", "path": "/publications/technical-bulletins", "component": "TechnicalBulletins" },
       { "label": "ATARI News Letters", "path": "/publications/atari-news-letters", "component": "AtariNewsLetters" },
-      { "label": "Proceedings", "path": "/publications/proceedings", "component": "Proceedings" }
+     
+      {"label":"Journey Of ATARI/ KVKs","path":"/publications/journey-books","component":"JourneyBooks"}
     ]
   },
   {
@@ -128,8 +130,7 @@
     "path": "/reports",
     "component": "Reports",
     "children": [
-      { "label": "MPR", "path": "/reports/mpr", "component": "Mpr" },
-      { "label": "QPR", "path": "/reports/qpr", "component": "Qpr" },
+      
       { "label": "Annual Progress Report", "path": "/reports/apr", "component": "Apr" }
       
     ]

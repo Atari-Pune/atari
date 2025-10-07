@@ -16,7 +16,7 @@ const AFAOScience = () => {
     name: 'Shri Nilesh Warkar',
     designation: 'Assistant  Finance & Accounts Officer ',
     qualification: 'Ph.D. in Agricultural Extension',
-    contact:'02025535660',
+    contact:'020-25535660',
     doj:'22 August 2024',
     photo: 'https://ik.imagekit.io/ataripune/assets/images/staff/Mr.%20Nilesh%20Warkar.jpeg?updatedAt=1753095438294', // Placeholder, replace with actual photo
   };
@@ -49,9 +49,7 @@ const AFAOScience = () => {
             <Typography variant="subtitle1" color="text.secondary" gutterBottom>
               <b>{afo.designation}</b>
             </Typography>
-            <Typography variant="body1" color="text.primary">
-              <b>Qualification:</b> {afo.qualification}
-            </Typography>
+           
             <Typography variant="body1" color="text.primary">
               <b>Contact Number:</b> {afo.contact}
             </Typography>

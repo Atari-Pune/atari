@@ -100,7 +100,7 @@ const itemData = [
 //const ITEMS_PER_PAGE = 12; // Number of images per page
 
 
-const PhotoGallery = () => {
+const PhotoCopy = () => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("sm"));
   const isSm = useMediaQuery(theme.breakpoints.between("sm", "md"));
@@ -150,7 +150,7 @@ const PhotoGallery = () => {
         variant="h4"
         align="center"
         gutterBottom
-        sx={{ fontWeight: "bold", mb: 3 ,color: '#228d45'}}
+        sx={{ fontWeight: "bold", mb: 3 }}
       >
         Photo Gallery
       </Typography>
@@ -293,4 +293,4 @@ const PhotoGallery = () => {
     );
 };
 
-export default PhotoGallery;
+export default PhotoCopy;

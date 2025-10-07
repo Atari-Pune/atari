@@ -168,8 +168,11 @@ const OrgChart = () => {
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
         fitView
+        fitViewOptions={{ padding: 0.1 }}
+        minZoom={0.1}   // 👈 allow zooming out more
+        maxZoom={2}     // 👈 allow zooming in more
       >
-        <MiniMap />
+        {/* <MiniMap /> */}
         <Controls />
         <Background variant="dots" gap={16} size={1} color="#aaa" />
       </ReactFlow>

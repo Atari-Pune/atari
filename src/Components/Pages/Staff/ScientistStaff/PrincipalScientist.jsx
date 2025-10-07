@@ -16,10 +16,10 @@ import Commonpage from '../../../../Layout/Commonpage'; // Import the reusable C
 const PrincipalScientist = () => {
   const prscientist = 
   {
-    name: 'Dr. Shakir Ali Q Sayed',
+    name: 'Dr. Shakir Ali Q Syed',
     designation: 'Principal Scientist',
     qualification: 'PhD in Agriculture Extension',
-    contact:'8380090282',
+    contact:'020-25535660',
     doj:'27 February 2024',
     photo: 'https://ik.imagekit.io/ataripune/assets/images/staff/Dr%20Shakir%20Ali.jpg?updatedAt=1753095438265', // Replace with actual photo path
   };

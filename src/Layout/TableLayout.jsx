@@ -49,8 +49,8 @@ const TableLayout = ({ data, columns }) => {
       }
     },
     { id: 'year', label: 'Year', align: 'center', type: 'text' },
-    { id: 'filetype', label: 'File Type', align: 'left', type: 'text' }, // Changed from file_type to filetype
-    { id: 'filesize', label: 'File Size', align: 'right', type: 'text' },
+    // { id: 'filetype', label: 'File Type', align: 'left', type: 'text' }, // Changed from file_type to filetype
+    // { id: 'filesize', label: 'File Size', align: 'right', type: 'text' },
     {
       id: 'actions',
       label: 'Actions',

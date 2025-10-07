@@ -12,7 +12,10 @@ import allReportsData from '../../../Data/table.json';
  */
 const TechnicalBulletins = () => {
   // Filter the data to show only "Technical Bulletins" for this page
-  const reportsData = allReportsData.filter(report => report.section === 'Technical Bulletins');
+  const reportsData = allReportsData.filter(report => report.section === 'Technical Bulletins')
+  .filter(report => report.section === 'Technical Bulletins')
+    .sort((a, b) => b.year - a.year); 
+  // Filter the data to show only "Proceedings" for this page
   return (
     <Commonpage>
       <Box>

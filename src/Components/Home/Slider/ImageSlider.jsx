@@ -9,10 +9,24 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 // Add a fallback in case the env variable is not set
 const WEBSITE_BASE_URL ='https://ik.imagekit.io/ataripune/assets/images';
 const imageData = [
-    {
-        id: 5,
+
+  
+
+{
+        id: 7,
         // Construct the src path using the base URL and the relative path to the image
-        src: `${WEBSITE_BASE_URL}/Slider images/NICRA Workshop at Goa.jpeg`,
+        src: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/DSC_3199%20(1).JPG?updatedAt=1758192120513`,
+        alt: "ICAR-ATARI Institute Building",
+        title: "ICAR-ATARI Institute Building",
+        fileType: "jpeg", // Corrected fileType to match actual extension
+        dimensions: "600x300",
+        description: ""
+    },
+
+   {
+        id: 6,
+        // Construct the src path using the base URL and the relative path to the image
+        src: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/DSC_1982.JPG?updatedAt=1758166185330`,
         alt: "ICAR-ATARI Institute Building",
         title: "ICAR-ATARI Institute Building",
         fileType: "jpeg", // Corrected fileType to match actual extension
@@ -21,15 +35,6 @@ const imageData = [
     },
     {
         id: 2,
-        src: `${WEBSITE_BASE_URL}/Slider images/DSC_8096.jpeg`,
-        alt: "NICRA Workshop at Goa", // Alt text for image 5 is more appropriate here
-        title: "NICRA Workshop at Goa", // Title for image 5 is more appropriate here
-        fileType: "jpg", // Corrected fileType
-        dimensions: "1200x400",
-        description: ""
-    },
-    {
-        id: 3,
         src: `${WEBSITE_BASE_URL}/Slider images/DSC_9794.jpeg`,
         alt: "Agricultural Field Research",
         title: "Agricultural Field Research", // Added title for consistency
@@ -37,17 +42,9 @@ const imageData = [
         dimensions: "1200x400",
         description: ""
     },
+    
     {
         id: 1,
-        src: `${WEBSITE_BASE_URL}/Slider images/6th%20Zonal%20workshop-1.JPG`,
-        alt: "6th Zonal Workshop Image",
-        title: "6th Zonal Workshop: Advancing Agricultural Research",
-        fileType: "jpg",
-        dimensions: "1200x400",
-        description: ""
-    },
-    {
-        id: 4,
         src: `${WEBSITE_BASE_URL}/Slider images/DSC_9940.jpeg`,
         alt: "Farmer with Harvest",
         title: "Farmer with Harvest", // Added title for consistency
@@ -55,6 +52,41 @@ const imageData = [
         dimensions: "1200x400",
         description: ""
     },
+    {
+        id: 5,
+        // Construct the src path using the base URL and the relative path to the image
+        src: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/Raksha%20Khadse.jpeg?updatedAt=1759120607278`,
+        alt: "ICAR-ATARI Institute Building",
+        title: "ICAR-ATARI Institute Building",
+        fileType: "jpeg", // Corrected fileType to match actual extension
+        dimensions: "1200x400",
+        description: ""
+    },
+
+{
+        id: 4,
+        // Construct the src path using the base URL and the relative path to the image
+        src: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/Kolhapur%20KVK.jpeg?updatedAt=1759120630547`,
+        alt: "ICAR-ATARI Institute Building",
+        title: "ICAR-ATARI Institute Building",
+        fileType: "jpeg", // Corrected fileType to match actual extension
+        dimensions: "1200x400",
+        description: ""
+    },
+    
+    {
+        id: 3,
+        // Construct the src path using the base URL and the relative path to the image
+        src: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/Kolhapur.jpeg?updatedAt=1759120583881`,
+        alt: "ICAR-ATARI Institute Building",
+        title: "ICAR-ATARI Institute Building",
+        fileType: "jpeg", // Corrected fileType to match actual extension
+        dimensions: "1200x400",
+        description: ""
+    },
+
+    
+    
 ];
 
 
@@ -186,84 +218,7 @@ const ImageSlider = () => {
                             }}
                         />
 
-                        {/* Text Overlay for Title, Description, and Metadata */}
-                        <Box
-                            sx={{
-                                position: 'absolute',
-                                bottom: 0, // Position at the very bottom
-                                left: 0,
-                                right: 0,
-                                // Gradient background for better readability over varied image content
-                                background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.0) 100%)',
-                                p: { xs: 1, sm: 2, md: 3 }, // Responsive padding inside the overlay
-                                color: 'white',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start', // Align text to the left
-                                justifyContent: 'flex-end', // Push content to the bottom
-                                textAlign: 'left', // Ensure text itself is left-aligned
-                                zIndex: 1, // Ensure text is above the image
-                                // Responsive fixed height for the overlay to prevent overlap and ensure space for dots
-                                height: { xs: '80px', sm: '100px', md: '120px' },
-                                overflow: 'hidden', // Hide any text that overflows the overlay box
-                            }}
-                        >
-                            <Typography
-                                variant="h6"
-                                component="h3"
-                                sx={{
-                                    fontWeight: 'bold',
-                                    fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.25rem' },
-                                    lineHeight: 1.2,
-                                    mb: 0.5,
-                                    textShadow: '1px 1px 2px rgba(0,0,0,0.7)', // Text shadow for better contrast
-                                    // Truncate title to 1 line if it overflows
-                                    display: '-webkit-box',
-                                    WebkitLineClamp: 1,
-                                    WebkitBoxOrient: 'vertical',
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
-                                }}
-                            >
-                                {image.title || 'Untitled Image'} {/* Fallback title */}
-                            </Typography>
-                            {image.description && ( // Only render description if it exists
-                                <Typography
-                                    variant="body2"
-                                    sx={{
-                                        fontSize: { xs: '0.75rem', sm: '0.875rem' },
-                                        lineHeight: 1.3,
-                                        opacity: 0.9,
-                                        textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
-                                        // Truncate description to 2 lines if it overflows
-                                        display: '-webkit-box',
-                                        WebkitLineClamp: 2,
-                                        WebkitBoxOrient: 'vertical',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis',
-                                    }}
-                                >
-                                    {image.description}
-                                </Typography>
-                            )}
-                            <Typography
-                                variant="caption"
-                                sx={{
-                                    fontSize: { xs: '0.65rem', sm: '0.75rem' },
-                                    opacity: 0.7,
-                                    mt: 0.5, // Margin top to separate from description
-                                    textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
-                                    // Truncate caption to 1 line if it overflows
-                                    display: '-webkit-box',
-                                    WebkitLineClamp: 1,
-                                    WebkitBoxOrient: 'vertical',
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
-                                }}
-                            >
-                                {`Type: ${image.fileType} | Dimensions: ${image.dimensions}`}
-                            </Typography>
-                        </Box>
+                       
                     </Box>
                 ))}
             </Box>

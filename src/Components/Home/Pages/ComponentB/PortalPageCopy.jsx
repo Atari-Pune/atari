@@ -5,9 +5,9 @@ import {
   useTheme, Tab, Tabs
 } from '@mui/material';
 import { useState } from 'react';
-import TagLayout from '../../../../Layout/TagLayout';
+import TagLayout from '../../../../Layout/TagLayout'
 
-import CommonLayout from '../../../../Layout/Fixpage/CommonLayout'; // Your new CommonLayout
+
 
 
 // Adjust paths as per your project structure
@@ -21,7 +21,7 @@ import quickLinks from '../../../../Data/QuickLinks2.json'; // Import routesConf
  * since both seem to fall under "Quick Links".
  */
 
-const customPortalPageSidebarItems = quickLinks.map(obj => {
+const customPortalSidebarItems = quickLinks.map(obj => {
   return {
     ...obj,
     path: obj.href,
@@ -29,7 +29,7 @@ const customPortalPageSidebarItems = quickLinks.map(obj => {
     ...(delete obj.href && {})
   };
 });
-const portalpageBreadcrumbs = [
+const portalBreadcrumbs = [
   { label: 'Home', path: '/' },
   { label: 'Quick Links', path: '/important-links' }, // Adjust path if 'Quick Links' has its own landing page
   { label: 'Portal' } // Current page, no path for last item
@@ -296,12 +296,7 @@ const PortalPage = () => {
     .filter(Boolean);
 
   return (
-    <CommonLayout
-            pageTitle="Portal Page" // REQUIRED page title for the Portal page
-            breadcrumbItems={portalpageBreadcrumbs} // REQUIRED breadcrumbs for the Portal page
-            sidebarNavItems={customPortalPageSidebarItems} // Pass custom sidebar items
-            sidebarTitle="Quick Links" // Custom sidebar title, consistent with Important Links
-        >
+    <Commonpage>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs
           value={selectedTab}
@@ -358,7 +353,7 @@ const PortalPage = () => {
         </Box>
       ))}
 
-    </CommonLayout>
+    </Commonpage>
   );
 };
 

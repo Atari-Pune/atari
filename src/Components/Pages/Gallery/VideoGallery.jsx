@@ -8,6 +8,18 @@ import { keyframes } from '@mui/system';
 import Commonpage from '../../../Layout/Commonpage';
 
 const videoList = [
+
+  {
+    title: "Video VI",
+    url: "https://www.youtube.com/embed/0vjjYC5tpfA?si=LPTmCT2FVjv5lj_W",
+
+      },
+      {
+    title: "Video V",
+    url: "https://www.youtube.com/embed/zb23HQeteec?si=CSrzmKLS3W_sSWU3",
+
+      },
+
   {
     title: "Video I",
     url: "https://www.youtube.com/embed/wGTjYLB34dI?si=odbcP4cO1goqrrp",
@@ -23,7 +35,12 @@ const videoList = [
   {
     title: "Video IV",
     url: "https://www.youtube.com/embed/m8L5SBWzmA4?si=kYo7ik6PcqVfjlxZ",
-  },
+      },
+
+
+
+
+
 ];
 const scroll = keyframes`
   0% {

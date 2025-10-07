@@ -58,11 +58,13 @@ SwachataHiSeva:lazy(()=> import ('../Components/Pages/Projects/SpecialProgrammes
     // Other Top-Level Pages
     Rti: lazy(() => import('../Components/Pages/RTI')), // Changed from RTI to Rti
     PhotoGallery: lazy(() => import('../Components/Pages/Gallery/PhotoGallery')),
+    //PhotoCopy: lazy(() => import('../Components/Pages/Gallery/PhotoCopy')),
     VideoGallery: lazy(() => import('../Components/Pages/Gallery/VideoGallery')),
     Publications: lazy(() => import('../Components/Pages/Publications/PublicationsPage')), // Changed from PublicationsPage to Publications
     ResearchPapersBooks: lazy(() => import('../Components/Pages/Publications/ResearchPapersBooks')),
     TechnicalBulletins: lazy(() => import('../Components/Pages/Publications/TechnicalBulletins')),
     AtariNewsLetters: lazy(() => import('../Components/Pages/Publications/ATARINewsLetters')), // Changed from ATARINewsLetters to AtariNewsLetters
+    JourneyBooks:lazy(()=> import('../Components/Pages/Publications/JourneyBooks')),
     Reports: lazy(() => import('../Components/Pages/Reports/ReportsPage')), // Changed from ReportsPage to Reports
     Mpr: lazy(() => import('../Components/Pages/Reports/MPRReports')), // Changed from MPRReports to Mpr
     Qpr: lazy(() => import('../Components/Pages/Reports/QPRReports')), // Changed from QPRReports to Qpr
@@ -86,7 +88,8 @@ SwachataHiSeva:lazy(()=> import ('../Components/Pages/Projects/SpecialProgrammes
     LinkingPolicy: lazy(() => import('../Components/Footer/LinkingPolicy')),
     DisclaimerPolicy: lazy(() => import('../Components/Footer/DisclaimerPolicy')),
     ContactUs: lazy(() => import('../Components/Footer/ContactUs')),
-    Feedback: lazy(() => import('../Components/Footer/Feedback'))
+    Feedback: lazy(() => import('../Components/Footer/Feedback')),
+    SuccessStories:lazy(() => import('../Components/Home/Pages/ComponentB/SuccessStories'))
 
 };
 
