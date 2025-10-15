@@ -9,8 +9,36 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 // Add a fallback in case the env variable is not set
 const WEBSITE_BASE_URL ='https://ik.imagekit.io/ataripune/assets/images';
 const imageData = [
-
-  
+    
+{id: 10,
+        // Construct the src path using the base URL and the relative path to the image
+        src: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/18.JPG?updatedAt=1760440698119`,
+        alt: "ICAR-ATARI Institute Building",
+        title: "ICAR-ATARI Institute Building",
+        fileType: "jpeg", // Corrected fileType to match actual extension
+        dimensions: "600x300",
+        description: ""
+    },
+  {
+        id: 9,
+        // Construct the src path using the base URL and the relative path to the image
+        src: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/PMDDKY%202.jpg?updatedAt=1760437987763`,
+        alt: "ICAR-ATARI Institute Building",
+        title: "ICAR-ATARI Institute Building",
+        fileType: "jpeg", // Corrected fileType to match actual extension
+        dimensions: "600x300",
+        description: ""
+    },{
+        id: 8,
+        // Construct the src path using the base URL and the relative path to the image
+        src: `https://ik.imagekit.io/ataripune/assets/images/Slider%20images/PMDDKY%201.jpeg?updatedAt=1760437986862`,
+        alt: "ICAR-ATARI Institute Building",
+        title: "ICAR-ATARI Institute Building",
+        fileType: "jpeg", // Corrected fileType to match actual extension
+        dimensions: "600x300",
+        description: ""
+    },
+    
 
 {
         id: 7,

@@ -21,6 +21,21 @@ import Commonpage from '../../../Layout/Commonpage';
 
 // Sample images (replace with your own URLs)
 const itemData = [
+  {
+        img: 'https://ik.imagekit.io/ataripune/assets/images/Photo%20Galley/1.jpg?updatedAt=1760441028146'
+    },
+    {
+        img: 'https://ik.imagekit.io/ataripune/assets/images/Photo%20Galley/19.jpg?updatedAt=1760441028334'
+    },
+  {
+        img: 'https://ik.imagekit.io/ataripune/assets/images/Photo%20Galley/WhatsApp%20Image%202025-10-11%20at%201.16.35%20PM.jpeg?updatedAt=1760439752713'
+    },
+    {
+        img: 'https://ik.imagekit.io/ataripune/assets/images/Photo%20Galley/WhatsApp%20Image%202025-10-11%20at%201.23.10%20PM.jpeg?updatedAt=1760438055360'
+    },
+    {
+        img: 'https://ik.imagekit.io/ataripune/assets/images/Photo%20Galley/WhatsApp%20Image%202025-10-11%20at%201.40.00%20PM.jpeg?updatedAt=1760439880833'
+    },
     {
         img: 'https://ik.imagekit.io/ataripune/assets/images/Photo%20Galley/DSC_3212.JPG?updatedAt=1759120467330'
     },

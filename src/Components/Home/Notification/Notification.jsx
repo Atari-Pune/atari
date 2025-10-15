@@ -9,6 +9,11 @@ const Notification = () => {
 
   // Data for the event alerts
    const eventAlerts = [
+    {
+      id: 3,
+      link: "https://ik.imagekit.io/ataripune/assets/document/pdf/Recent%20Events/Webcast%20of%20Hon_ble%20Prime%20Minister_s%20Dhan%20Dhaanya%20Krishi%20Yojana%20(PMDDKY).pdf?updatedAt=1760352935651",
+      text: "Webcast of Hon_ble Prime Minister_s Dhan Dhaanya Krishi Yojana (PMDDKY)"
+    },
 {
       id: 2,
       link: "https://ik.imagekit.io/ataripune/assets/document/pdf/Recent%20Events/Review%20Workshop%20of%20ARYA%20Project.pdf?updatedAt=1759135103384",
